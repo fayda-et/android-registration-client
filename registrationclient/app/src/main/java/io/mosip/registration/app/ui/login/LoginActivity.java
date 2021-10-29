@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import io.mosip.registration.app.MainActivity;
 import io.mosip.registration.app.R;
+import io.mosip.registration.app.ui.home.Dashboard;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, Dashboard.class);
                 LoginActivity.this.startActivity(intent);
 
                 //Complete and destroy login activity once successful

@@ -5,4 +5,7 @@
     <color name="colorAccent">#6D78FF</color>
     <color name="colorBackground">#f2f6ff</color>
     <color name="white">#FFFFFF</color>
+    <color name="primary_text">#565865</color>
+    <color name="secondary_text">#9b9a9d</color>
+    <color name="dashboard_item">#F2F6FF</color>
 </resources>

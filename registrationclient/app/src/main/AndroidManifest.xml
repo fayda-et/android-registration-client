@@ -22,6 +22,8 @@
         <activity android:name=".MainActivity">
 
         </activity>
+        <activity android:name=".ui.home.Dashboard"/>
+
     </application>
 
 </manifest>
