@@ -1,7 +1,10 @@
 package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -58,6 +61,70 @@ final int layoutId =R.layout.dynamic_agedate_box;
          monthBox= findViewById(R.id.dob_month);
          yearBox= findViewById(R.id.dob_year);
          ageBox= findViewById(R.id.dob_age);
+        dateBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+        monthBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+        yearBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+        ageBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+        dateBox.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.dob_control_holder);
+                if(b){
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                }
+                else{
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                }
+
+            }
+        });
+        monthBox.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.dob_control_holder);
+                if(b){
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                }
+                else{
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                }
+
+            }
+        });
+        yearBox.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.dob_control_holder);
+                if(b){
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                }
+                else{
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                }
+
+            }
+        });
+        ageBox.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.dob_control_holder);
+                if(b){
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                }
+                else{
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                }
+
+            }
+        });
     }
 
     public String getValue(){

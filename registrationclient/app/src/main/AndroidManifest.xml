@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-<!--        <activity-->
-<!--            android:name=".DemographicRegistrationController"-->
-<!--            android:exported="true" />-->
+        <activity
+            android:name=".BiometricRegistrationController"
+            android:exported="true" />
+        <!-- <activity -->
+        <!-- android:name=".DemographicRegistrationController" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".DemographicRegistrationController"
             android:label="@string/title_activity_login"

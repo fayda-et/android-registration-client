@@ -7,85 +7,86 @@ android:layout_height="match_parent"
 android:background="#871959"
 tools:context=".DemographicRegistrationController">
 
-<ScrollView
-    android:id="@+id/scrollView2"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        android:background="@color/backgroundColor"
+        app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
-            android:id="@+id/pnlPrimaryLanguagePanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/backgroundColor"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:weightSum="10">
+            android:orientation="horizontal"
+            >
 
             <LinearLayout
+                android:id="@+id/pnlPrimaryLanguagePanel"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                >
+                android:background="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/rounded_corner"
-                    android:fadingEdge="vertical"
-                    android:hint="@string/fullName"
-                    android:textColorHint="@color/design_default_color_primary" />
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/rounded_corner"
+                        android:fadingEdge="vertical"
+                        android:hint="@string/fullName"
+                        android:textColorHint="@color/design_default_color_primary" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/secondaryColor" />
+
+            <LinearLayout
+                android:id="@+id/pnlSecondaryLanguagePanel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@color/backgroundColor"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:background="@drawable/rounded_corner"
+                        android:fadingEdge="vertical"
+                        android:hint="@string/fullName"
+                        android:textColorHint="@color/design_default_color_primary" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="@color/primaryDarkColor" />
-
-        <LinearLayout
-            android:id="@+id/pnlSecondaryLanguagePanel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical"
-            android:background="@color/backgroundColor"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/rounded_corner"
-                    android:fadingEdge="vertical"
-                    android:hint="@string/fullName"
-                    android:textColorHint="@color/design_default_color_primary" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/pnlBottomCommands"

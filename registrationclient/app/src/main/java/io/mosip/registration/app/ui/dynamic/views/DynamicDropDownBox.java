@@ -2,6 +2,8 @@ package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -52,6 +54,24 @@ public class DynamicDropDownBox extends LinearLayout implements DynamicView {
 
     private void initComponents() {
          drpDown= findViewById(R.id.dropdown_input);
+
+        drpDown.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.dropdown_control_holder);
+                if(b){
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                }
+                else{
+                    pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                }
+
+            }
+        });
+
+
     }
 
     public String getValue(){

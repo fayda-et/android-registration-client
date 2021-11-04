@@ -1,10 +1,14 @@
 package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -52,9 +56,25 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
    }
 
     private void initComponents() {
-        editText = findViewById(R.id.text_input_edit);
+        editText = findViewById(R.id.txt_input_box);
+        editText.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+        editText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                ViewGroup pnl = findViewById(R.id.control_holder);
+                    if(b){
+                        pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
+
+                    }
+                    else{
+                        pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+
+                    }
+
+            }
+        });
         //editText.setHint(labelText);
-        //((TextInputLayout)findViewById(R.id.text_input_edit_layout)).setHint(labelText);
+        ((TextView) findViewById(R.id.textbox_label)).setText(labelText);
     }
 
     public String getValue(){
