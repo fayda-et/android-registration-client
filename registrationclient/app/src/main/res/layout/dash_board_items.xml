@@ -1,456 +1,795 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-   <!-- <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/_50sdp"
+    android:fitsSystemWindows="true"
+    >
 
-        android:layout_height="@dimen/_50sdp"
-        app:cardBackgroundColor="@color/dashboard_item"
-        app:cardCornerRadius="@dimen/_14sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- <TextView
+         android:id="@+id/textViewRegistrationApp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+          android:fontFamily="sans-serif"
+         android:text="Demographic and biometric enrollment"
+         android:textAlignment="center"
+         android:textSize="18sp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+     <LinearLayout
+         android:id="@+id/linearLayoutRegistration"
+         android:layout_width="1000dp"
+         android:layout_height="120dp"
+         android:orientation="horizontal"
+         android:padding="10dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/textViewRegistrationApp">
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardviewRegistration"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="10dp"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageRegistration"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_new_registration"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textViewRegistration"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/registration"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleReg"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textViewRegistration"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_for_registration"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardviewSync"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="10dp"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageSync"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_sync"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textSync"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/system_sync"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleSync"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textSync"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_sync"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </androidx.cardview.widget.CardView>
+
+     </LinearLayout>
+     <LinearLayout
+         android:id="@+id/linearLayoutmiddle"
+         android:layout_width="1000dp"
+         android:layout_height="120dp"
+         android:orientation="horizontal"
+         android:padding="10dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/linearLayoutRegistration">
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardviewUpload"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="10dp"
+             android:clickable="true"
+             android:focusable="true"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageUpload"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_upload"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textViewUpload"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/upload"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleUpload"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textViewUpload"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_upload"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </androidx.cardview.widget.CardView>
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardviewCenterRap"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="10dp"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageRemap"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_remap"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textViewRemap"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/center_remap"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleRemap"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textViewRemap"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_approval"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </androidx.cardview.widget.CardView>
+
+
+
+
+     </LinearLayout>
+
+     <LinearLayout
+         android:id="@+id/linearLayoutBottom"
+         android:layout_width="1000dp"
+         android:layout_height="120dp"
+         android:orientation="horizontal"
+         android:padding="10dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/linearLayoutmiddle">
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/cardviewOperatorsBiometrics"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_margin="10dp"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageOperatorsBiometrics"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_finger_print"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textOperatorsBiometrics"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/operators_biometric"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleOperatorsBiometrics"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textOperatorsBiometrics"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_operators"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </androidx.cardview.widget.CardView>
+         <com.google.android.material.card.MaterialCardView
+             android:id="@+id/cardviewApproval"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:clickable="true"
+             android:focusable="true"
+             android:checkable="true"
+             android:layout_margin="10dp"
+             android:layout_weight="1"
+             app:cardElevation="5dp">
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                 <ImageView
+                     android:id="@+id/imageApproval"
+                     android:layout_width="50dp"
+                     android:layout_height="50dp"
+                     android:layout_alignParentLeft="true"
+                     android:layout_centerHorizontal="true"
+                     app:srcCompat="@drawable/ic_pending_approval"
+                     app:tint="@color/colorPrimary" />
+
+                 <TextView
+                     android:id="@+id/textViewApproval"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerHorizontal="true"
+                     android:fontFamily="sans-serif"
+                     android:text="@string/pending_approval"
+                     android:textSize="@dimen/_20ssp"
+
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/textSubtitleApproval"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@id/textViewApproval"
+                     android:layout_centerHorizontal="true"
+                     android:layout_marginStart="40dp"
+                     android:text="@string/sub_approval"
+                     android:textColor="@color/secondary_text"
+                     android:textSize="@dimen/_14ssp" />
+             </RelativeLayout>
+         </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+     </LinearLayout>-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageRegistration"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/_8sdp"
-            android:src="@drawable/ic_new_registration"
-            android:tint="@color/colorPrimary"/>
-    </androidx.cardview.widget.CardView>-->
-    <TextView
-        android:id="@+id/textViewRegistrationApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:fontFamily="sans-serif"
-        android:text="Demographic and biometric enrollment"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutRegistration"
-        android:layout_width="1000dp"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewRegistrationApp">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRegistration"
+                android:layout_width="344dp"
+                android:layout_height="148dp"
+                android:layout_margin="8dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:elevation="1dp"
+                android:focusable="true"
+                android:foreground="@drawable/card_forground"
+                android:padding="100dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewRegistration"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/imageRegistration"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/registration"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_new_registration"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/registration"
+
+                            android:textAppearance="@style/registration"
+                            android:textColor="@color/primary_text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/sub_for_registration"
+                            android:textAppearance="@style/sub_title"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+
+                    </LinearLayout>
+
+                    <!-- Buttons -->
+
+
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageRegistration"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_update" />
+
+                <TextView
+                    android:id="@+id/textViewupdates"
+                    android:layout_width="102.18dp"
+                    android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_new_registration"
-                    app:tint="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/textViewRegistration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/registration"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleReg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewRegistration"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_for_registration"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewSync"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/update"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
 
                 <ImageView
-                    android:id="@+id/imageSync"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_registration"
+                    app:tint="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/textviewRegistration"
+                    android:layout_width="140dp"
+                    android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_sync"
-                    app:tint="@color/colorPrimary" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="65dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/no_of_registration"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
 
-                <TextView
-                    android:id="@+id/textSync"
-                    android:layout_width="wrap_content"
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSync"
+                android:layout_width="344dp"
+                android:layout_height="148dp"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="300dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:elevation="1dp"
+                android:focusable="true"
+                android:foreground="@drawable/card_forground"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/system_sync"
-                    android:textSize="@dimen/_20ssp"
+                    android:orientation="horizontal">
 
-                    android:textStyle="bold" />
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/imageSync"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
 
-                <TextView
-                    android:id="@+id/textSubtitleSync"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textSync"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_sync"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/system_sync"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_sync"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/system_sync"
+
+                            android:textAppearance="@style/registration"
+                            android:textColor="@color/primary_text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/sub_sync"
+                            android:textAppearance="@style/sub_title"
+                            android:textColor="?android:attr/textColorSecondary" />
 
 
+                    </LinearLayout>
+
+                    <!-- Buttons -->
 
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linearLayoutmiddle"
-        android:layout_width="1000dp"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutRegistration">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewUpload"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageUpload"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_access_time" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="102.18dp"
+                    android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_upload"
-                    app:tint="@color/colorPrimary" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/time_info"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPendingApproval"
+                android:layout_width="344dp"
+                android:layout_height="148dp"
+                android:layout_margin="8dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:elevation="1dp"
+                android:focusable="true"
+                android:foreground="@drawable/card_forground"
+                android:padding="100dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/imagePendingApproval"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/pending_approval"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_pending_approval"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pending_approval"
+
+                            android:textAppearance="@style/registration"
+                            android:textColor="@color/primary_text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/sub_approval"
+                            android:textAppearance="@style/sub_title"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <ImageView
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_access_time" />
 
                 <TextView
                     android:id="@+id/textViewUpload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/upload"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleUpload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewUpload"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_upload"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewCenterRap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                    android:layout_width="102.18dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/approval_time"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
 
                 <ImageView
-                    android:id="@+id/imageRemap"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_sub_pendding"
+                    app:tint="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/textviewUploadInfo"
+                    android:layout_width="140dp"
+                    android:layout_height="24dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_remap"
-                    app:tint="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/textViewRemap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/center_remap"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleRemap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewRemap"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_approval"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="65dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/num_of_pending_approval"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
 
 
+            </com.google.android.material.card.MaterialCardView>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutBottom"
-        android:layout_width="1000dp"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutmiddle">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewOperatorsBiometrics"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageOperatorsBiometrics"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_finger_print"
-                    app:tint="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/textOperatorsBiometrics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/operators_biometric"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleOperatorsBiometrics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textOperatorsBiometrics"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_operators"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewApproval"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageApproval"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/ic_pending_approval"
-                    app:tint="@color/colorPrimary" />
-
-                <TextView
-                    android:id="@+id/textViewApproval"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/pending_approval"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleApproval"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textViewApproval"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_approval"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-
-
-
-
-    </LinearLayout>
-    <!--<LinearLayout
-        android:id="@+id/linearLayoutsync"
-        android:layout_width="350dp"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutRegistration">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardviewSync"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:cardElevation="5dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageSync"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerHorizontal="true"
-                    android:tint="@color/colorPrimary"
-                    app:srcCompat="@drawable/ic_sync" />
-
-                <TextView
-                    android:id="@+id/textSync"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/system_sync"
-                    android:textSize="@dimen/_20ssp"
-
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textSubtitleSync"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textSync"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="40dp"
-                    android:text="@string/sub_sync"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/_14ssp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>-->
-
-
-       
-      <!--  <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:paddingStart="@dimen/_40sdp"
-            android:paddingLeft="@dimen/_40sdp"
-            android:paddingTop="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:paddingRight="@dimen/_16sdp"
-            android:paddingBottom="@dimen/_16sdp">
-
-            <TextView
-                android:id="@+id/textRegistration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-
-                android:text="@string/registration"
-                android:textColor="@color/primary_text"
-                android:textSize="@dimen/_16ssp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardUpload"
+                android:layout_width="344dp"
+                android:layout_height="148dp"
+                android:layout_margin="8dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:elevation="1dp"
+                android:focusable="true"
+                android:foreground="@drawable/card_forground"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-               />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Media -->
+                    <ImageView
+                        android:id="@+id/imageUpload"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+
+                        android:layout_marginLeft="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/upload"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_upload"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Title, secondary and supporting text -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/upload"
+
+                            android:textAppearance="@style/registration"
+                            android:textColor="@color/primary_text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/sub_upload"
+                            android:textAppearance="@style/sub_title"
+                            android:textColor="?android:attr/textColorSecondary" />
 
 
-            <TextView
-                android:id="@+id/textSubtitleReg"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                    </LinearLayout>
 
-                android:layout_marginStart="40dp"
-                android:text="@string/sub_for_registration"
-                android:textColor="@color/secondary_text"
-                android:textSize="@dimen/_14ssp"
-                app:layout_constraintBottom_toBottomOf="@id/textRegistration"
-                app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <!-- Buttons -->
 
 
+                </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>-->
+                <ImageView
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_access_time" />
 
+                <TextView
+                    android:id="@+id/textViewSubUpload"
+                    android:layout_width="102.18dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/access_time_upload"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
+
+                <ImageView
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:src="@drawable/ic_sub_pendding"
+                    app:tint="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/textviewSubUplodInfo"
+                    android:layout_width="140dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="65dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="3sp"
+                    android:text="@string/num_of_pending_upload"
+                    android:textAppearance="@style/sub_info"
+                    android:translationY="-1.61sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

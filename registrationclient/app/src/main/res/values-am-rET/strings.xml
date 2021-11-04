@@ -44,4 +44,6 @@
     <string name="center_remap">Center Remap</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="update">10 Updates</string>
+
 </resources>

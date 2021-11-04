@@ -43,7 +43,10 @@
     </style>
 
 
-
+    <style name="sub_info">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#A5ADBB</item>
+    </style>
 
     <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>

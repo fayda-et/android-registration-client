@@ -28,14 +28,14 @@
     <string name="notification">Notification</string>
     <string name="upload">Upload</string>
     <string name="sub_for_registration">New registration | Update | Lost</string>
-    <string name="no_of_registration">Registration</string>
+    <string name="no_of_registration">60,000,000 registered</string>
     <string name="sub_sync">Sync configuration data</string>
     <string name="time_info">2 hours ago</string>
     <string name="search">Search</string>
     <string name="indicators">Indicators</string>
     <string name="num_of_notification">100</string>
-    <string name="num_of_pending_approval">200</string>
-    <string name="num_of_pending_upload">111</string>
+    <string name="num_of_pending_approval">200 pending</string>
+    <string name="num_of_pending_upload">111 Pending</string>
     <string name="num_of_registrant">150</string>
     <string name="sub_approval">Approve Registration</string>
     <string name="sub_upload">Upload individuals data</string>
@@ -44,4 +44,11 @@
     <string name="center_remap">Center Remap</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="update">10 Updates</string>
+    <string name="approval_time">10min ago</string>
+    <string name="access_time_upload">5 min ago</string>
+    <string name="new_registration">Register</string>
+    <string name="lost_id">Lost ID</string>
+    <string name="update_record">Update Record</string>
+
 </resources>

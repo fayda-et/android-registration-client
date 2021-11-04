@@ -7,5 +7,11 @@
     <color name="white">#FFFFFF</color>
     <color name="primary_text">#565865</color>
     <color name="secondary_text">#9b9a9d</color>
-    <color name="dashboard_item">#F2F6FF</color>
+    <color name="dashboard_item">#9b9a9d</color>
+    <color name="cardview">#cfd8dc</color>
+    <color name="light_black">#484848</color>
+    <color name="homepage_bg_color">#F2F6FF</color>
+
+
+
 </resources>
