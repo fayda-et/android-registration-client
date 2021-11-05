@@ -39,4 +39,6 @@
     <string name="parentId">Parent ID</string>
     <string name="introducerID">Introducer ID</string>
     <string name="introducerRelation">Introducer Relation</string>
+    <string name="Iris">Iris</string>
+    <string name="scan">Scan</string>
 </resources>
