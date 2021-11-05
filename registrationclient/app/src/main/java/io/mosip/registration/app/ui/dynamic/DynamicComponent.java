@@ -15,10 +15,10 @@ public class DynamicComponent    {
        // init();
     }
     public DynamicView getPrimaryView() {
-        return views.get(0);
+        return views.get(1);
     }
     public DynamicView getSecondaryView() {
-        return views.get(1);
+        return views.get(2);
     }
     public void setPrimaryView(DynamicView primaryView) {
         this.setView(0,primaryView);

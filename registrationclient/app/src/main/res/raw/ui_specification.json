@@ -67,8 +67,8 @@
     "maximum": 0,
     "description": "Full Name",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Nom complet",
+      "oro": "الاسم الكامل",
+      "amh": "Nom complet",
       "eng": "Full Name"
     },
     "controlType": "textbox",
@@ -106,8 +106,8 @@
     "maximum": 0,
     "description": "dateOfBirth",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "DOB",
+      "oro": "الاسم الكامل",
+      "amh": "DOB",
       "eng": "DOB"
     },
     "controlType": "ageDate",
@@ -150,8 +150,8 @@
     "maximum": 0,
     "description": "gender",
     "label": {
-      "ara": "جنس",
-      "fra": "Le genre",
+      "oro": "جنس",
+      "amh": "Le genre",
       "eng": "Gender"
     },
     "controlType": "dropdown",
@@ -182,8 +182,8 @@
     "maximum": 0,
     "description": "residenceStatus",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Reside Status",
+      "oro": "الاسم الكامل",
+      "amh": "Reside Status",
       "eng": "Residence Status"
     },
     "controlType": "dropdown",
@@ -214,8 +214,8 @@
     "maximum": 0,
     "description": "region",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Region",
+      "oro": "الاسم الكامل",
+      "amh": "Region",
       "eng": "Region"
     },
     "controlType": "dropdown",
@@ -253,8 +253,8 @@
     "maximum": 0,
     "description": "province",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Province",
+      "oro": "الاسم الكامل",
+      "amh": "Province",
       "eng": "Province"
     },
     "controlType": "dropdown",
@@ -292,8 +292,8 @@
     "maximum": 0,
     "description": "city",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "City",
+      "oro": "الاسم الكامل",
+      "amh": "City",
       "eng": "City"
     },
     "controlType": "dropdown",
@@ -331,8 +331,8 @@
     "maximum": 0,
     "description": "zone",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Zone",
+      "oro": "الاسم الكامل",
+      "amh": "Zone",
       "eng": "Zone"
     },
     "controlType": "dropdown",
@@ -363,8 +363,8 @@
     "maximum": 0,
     "description": "postalCode",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Postal",
+      "oro": "الاسم الكامل",
+      "amh": "Postal",
       "eng": "Postal"
     },
     "controlType": "dropdown",
@@ -402,8 +402,8 @@
     "maximum": 0,
     "description": "phone",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Phone",
+      "oro": "الاسم الكامل",
+      "amh": "Phone",
       "eng": "Phone"
     },
     "controlType": "textbox",
@@ -441,8 +441,8 @@
     "maximum": 0,
     "description": "email",
     "label": {
-      "ara": "الاسم الكامل",
-      "fra": "Email",
+      "oro": "الاسم الكامل",
+      "amh": "Email",
       "eng": "Email"
     },
     "controlType": "textbox",
@@ -480,8 +480,8 @@
     "maximum": 0,
     "description": "introducerName",
     "label": {
-      "ara": "اسم المُعرّف",
-      "fra": "nom del'introducteur",
+      "oro": "اسم المُعرّف",
+      "amh": "nom del'introducteur",
       "eng": "Introducer Name"
     },
     "controlType": "textbox",
@@ -517,8 +517,8 @@
     "maximum": 0,
     "description": "introducerRID",
     "label": {
-      "ara": "مقدم RID",
-      "fra": "Introducteur RID",
+      "oro": "مقدم RID",
+      "amh": "Introducteur RID",
       "eng": "Introducer RID"
     },
     "controlType": "textbox",
@@ -561,8 +561,8 @@
     "maximum": 0,
     "description": "introducerUIN",
     "label": {
-      "ara": "مقدم في",
-      "fra": "Introducteur UIN",
+      "oro": "مقدم في",
+      "amh": "Introducteur UIN",
       "eng": "Introducer UIN"
     },
     "controlType": "textbox",
@@ -605,8 +605,8 @@
     "maximum": 0,
     "description": "proofOfAddress",
     "label": {
-      "ara": "إثبات العنوان",
-      "fra": "Address Proof",
+      "oro": "إثبات العنوان",
+      "amh": "Address Proof",
       "eng": "Address Proof"
     },
     "controlType": "fileupload",
@@ -642,8 +642,8 @@
     "maximum": 0,
     "description": "proofOfIdentity",
     "label": {
-      "ara": "إثبات الهوية",
-      "fra": "Identity Proof",
+      "oro": "إثبات الهوية",
+      "amh": "Identity Proof",
       "eng": "Identity Proof"
     },
     "controlType": "fileupload",
@@ -679,8 +679,8 @@
     "maximum": 0,
     "description": "proofOfRelationship",
     "label": {
-      "ara": "إثبات العلاقة",
-      "fra": "Relationship Proof",
+      "oro": "إثبات العلاقة",
+      "amh": "Relationship Proof",
       "eng": "Relationship Proof"
     },
     "controlType": "fileupload",
@@ -716,8 +716,8 @@
     "maximum": 0,
     "description": "proofOfDateOfBirth",
     "label": {
-      "ara": "دليل DOB",
-      "fra": "DOB Proof",
+      "oro": "دليل DOB",
+      "amh": "DOB Proof",
       "eng": "DOB Proof"
     },
     "controlType": "fileupload",
@@ -753,8 +753,8 @@
     "maximum": 0,
     "description": "proofOfException",
     "label": {
-      "ara": "إثبات الاستثناء",
-      "fra": "Exception Proof",
+      "oro": "إثبات الاستثناء",
+      "amh": "Exception Proof",
       "eng": "Exception Proof"
     },
     "controlType": "fileupload",
@@ -785,8 +785,8 @@
     "maximum": 0,
     "description": "proofOfException",
     "label": {
-      "ara": "إثبات الاستثناء2",
-      "fra": "Exception Proof",
+      "oro": "إثبات الاستثناء2",
+      "amh": "Exception Proof",
       "eng": "Exception Proof"
     },
     "controlType": "fileupload",
@@ -817,8 +817,8 @@
     "maximum": 0,
     "description": "",
     "label": {
-      "ara": "القياسات الحيوية الفردية",
-      "fra": "Applicant Biometrics",
+      "oro": "القياسات الحيوية الفردية",
+      "amh": "Applicant Biometrics",
       "eng": "Applicant Biometrics"
     },
     "controlType": "biometrics",
@@ -868,8 +868,8 @@
     "maximum": 0,
     "description": "Used to hold biometrics only for authentication",
     "label": {
-      "ara": "القياسات الحيوية الفردية",
-      "fra": "Authentication Biometrics",
+      "oro": "القياسات الحيوية الفردية",
+      "amh": "Authentication Biometrics",
       "eng": "Authentication Biometrics"
     },
     "controlType": "biometrics",
@@ -919,8 +919,8 @@
     "maximum": 0,
     "description": "",
     "label": {
-      "ara": "مقدم القياسات الحيوية",
-      "fra": "Introducteur Biométrie",
+      "oro": "مقدم القياسات الحيوية",
+      "amh": "Introducteur Biométrie",
       "eng": "Introducer Biometrics"
     },
     "controlType": "biometrics",
@@ -998,8 +998,8 @@
     "maximum": 0,
     "description": "consent accepted",
     "label": {
-      "ara": "الاسم الكامل الكامل الكامل",
-      "fra": "J'ai lu et j'accepte les termes et conditions pour partager mes PII",
+      "oro": "الاسم الكامل الكامل الكامل",
+      "amh": "J'ai lu et j'accepte les termes et conditions pour partager mes PII",
       "eng": "I have read and accept terms and conditions to share my PII"
     },
     "controlType": "checkbox",

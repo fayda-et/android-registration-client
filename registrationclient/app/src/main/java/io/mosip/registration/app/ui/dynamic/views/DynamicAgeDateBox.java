@@ -52,15 +52,17 @@ final int layoutId =R.layout.dynamic_agedate_box;
 
     private void init(Context context) {
         inflate(context, layoutId, this);
-        ((TextView)findViewById(R.id.dob_label)).setText(labelText);
         initComponents();
     }
 
     private void initComponents() {
-         dateBox= findViewById(R.id.dob_date);
+        ((TextView)findViewById(R.id.dob_label)).setText(labelText);
+
+        dateBox= findViewById(R.id.dob_date);
          monthBox= findViewById(R.id.dob_month);
          yearBox= findViewById(R.id.dob_year);
          ageBox= findViewById(R.id.dob_age);
+
         dateBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
         monthBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
         yearBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
