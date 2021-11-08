@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".BiometricRegistrationController"
+            android:name=".DemographicRegistrationController"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
         <!-- android:name=".DemographicRegistrationController" -->
         <!-- android:exported="true" /> -->
         <activity
-            android:name=".DemographicRegistrationController"
+            android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

@@ -81,9 +81,11 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
                     for(Button btn:allOptions){
                         if(btn.getText().toString().equalsIgnoreCase(option.getText().toString())==false){
                             btn.setBackground(getResources().getDrawable(R.drawable.button_option_default));
+                            btn.setTextColor(getResources().getColor(R.color.black));
                         }
                         else{
                             btn.setBackground(getResources().getDrawable(R.drawable.button_option_selected));
+                            btn.setTextColor(getResources().getColor(R.color.white));
                         }
                     }
                 }
@@ -105,10 +107,11 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
            if(btn.getText().toString().equalsIgnoreCase(value)){
                selectedOption=value;
                btn.setBackground(getResources().getDrawable(R.drawable.button_option_selected));
-
+               btn.setTextColor(getResources().getColor(R.color.white));
            }
            else{
                btn.setBackground(getResources().getDrawable(R.drawable.button_option_default));
+               btn.setTextColor(getResources().getColor(R.color.black));
            }
        }
     }

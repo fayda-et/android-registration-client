@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.ArrayMap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
@@ -38,10 +40,10 @@ public class DemographicRegistrationController extends AppCompatActivity {
 
 
 
-    public String loadJSONFromResource() {
+    public String loadJSONFromResource(int resourceID) {
         String json = null;
         try {
-            InputStream is = getApplicationContext().getResources().openRawResource(R.raw.ui_specification);//getActivity().getAssets().open("yourfilename.json");
+            InputStream is = getApplicationContext().getResources().openRawResource(resourceID);//getActivity().getAssets().open("yourfilename.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -58,106 +60,74 @@ public class DemographicRegistrationController extends AppCompatActivity {
 
 
     private List<DynamicComponent> loadedFields = new ArrayList<>();
-
+    private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
     private void loadUI() {
 
 
-////        LinearLayout pnlPrimaryLangGrpComp = new LinearLayout(this.getApplicationContext());
-////        LinearLayout pnlSecondLangGrpComp = new LinearLayout(this.getApplicationContext());
-//
-//        LinearLayout.LayoutParams matchParentLayout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-//        pnlPrimaryLangGrpComp.setOrientation(LinearLayout.HORIZONTAL);
-//        pnlSecondLangGrpComp.setOrientation(LinearLayout.HORIZONTAL);
-//        pnlPrimaryLangGrpComp.setLayoutParams(matchParentLayout);
-//        pnlSecondLangGrpComp.setLayoutParams(matchParentLayout);
 
         pnlPrimary.removeAllViews();
         pnlSecondary.removeAllViews();
         DynamicComponentFactory factory = new DynamicComponentFactory(getApplicationContext());
 
-        String in = loadJSONFromResource();
-        JSONArray compFromJson = null;
+
+        String components = loadJSONFromResource(R.raw.new_registration_process);
+        JSONObject compFromJson = null;
+        List<String> groupsOrder= new ArrayList<>();
         try {
-            compFromJson = new JSONArray(in);
+            compFromJson = new JSONObject(components);
+            JSONArray screens = compFromJson.getJSONArray("screens");
+            for (int i = 0; i < screens.length(); i++) {
+                JSONObject item = screens.getJSONObject(i);
+                if (item.get("name").toString().equalsIgnoreCase("DemographicDetails") ){//pvt|| item.get("fieldCategory").toString().equalsIgnoreCase("kyc")) {
+                    JSONArray fields = item.getJSONArray("fields");
 
-            for (int i = 0; i < compFromJson.length(); i++) {
-                JSONObject item = compFromJson.getJSONObject(i);
-                if (item.get("fieldCategory").toString().equalsIgnoreCase("pvt") || item.get("fieldCategory").toString().equalsIgnoreCase("kyc")) {
-                    String fieldName = item.getString("id");
-//                    String description=item.getString("description");
-//                    String primaryLangLabel=item.getJSONObject("label").getString("primary");
-//                    String secondaryLangLabel=item.getJSONObject("label").getString("secondary");
-                    String controlType = item.getString("controlType");
-                    boolean isRequired = item.getBoolean("inputRequired");
-
-//                    JSONArray validators = item.getJSONArray("validators");
-//                    for(int valIndex=0;valIndex<validators.length();valIndex++){
-//                        String validatorType = validators.getJSONObject(valIndex).getString("type");
-//                        String validator = validators.getJSONObject(valIndex).getString("validator");
-//                        //arguments
-//                    }
-
-                    if (controlType.equalsIgnoreCase("textbox")) {
-
-
-                        DynamicComponent component = factory.getTextComponent(item.getJSONObject("label"), item.getJSONArray("validators"));
-
-                        pnlPrimary.addView((View) component.getPrimaryView());
-                        pnlSecondary.addView((View) component.getSecondaryView());
-//                    for(int v=1;i<component.getViewCount();i++) {
-//                        pnlSecondary.addView((View) component.getView(v));
-//                        break;
-//                    }
-                    } else if (controlType.equalsIgnoreCase("ageDate")) {
-
-                        DynamicComponent component = factory.getAgeDateComponent(item.getJSONObject("label"), item.getJSONArray("validators"));
-
-                        pnlPrimary.addView((View) component.getPrimaryView());
-                        pnlSecondary.addView((View) component.getSecondaryView());
-//                    for(int v=1;i<component.getViewCount();i++) {
-//                        pnlSecondary.addView((View) component.getView(v));
-//                        break;
-//                    }
-                    } else if (controlType.equalsIgnoreCase("dropdown")) {
-
-
-                        if (fieldName.contains("gender")) {
-                            DynamicComponent component = factory.getSwitchComponent(item.getJSONObject("label"), item.getJSONArray("validators"));
-
-                            pnlPrimary.addView((View) component.getPrimaryView());
-                            pnlSecondary.addView((View) component.getSecondaryView());
-                        } else if (fieldName.contains("residenceStatus")) {
-                            DynamicComponent component = factory.getSwitchComponent(item.getJSONObject("label"), item.getJSONArray("validators"));
-
-                            pnlPrimary.addView((View) component.getPrimaryView());
-                            pnlSecondary.addView((View) component.getSecondaryView());
-                        } else {
-                            DynamicComponent component = factory.getDropdownComponent(item.getJSONObject("label"), item.getJSONArray("validators"));
-
-                            pnlPrimary.addView((View) component.getPrimaryView());
-                            pnlSecondary.addView((View) component.getSecondaryView());
+                    for(int fieldIndex=0;fieldIndex<fields.length();fieldIndex++) {
+                        JSONObject field = fields.getJSONObject(fieldIndex);
+                        String groupName = field.getString("alignmentGroup");
+                        if (groupName == null) {
+                            groupName = "null";
                         }
-
+                        if (groupedFields.containsKey(groupName)) {
+                            groupedFields.get(groupName).add(field);
+                        } else {
+                            List<JSONObject> grpFields= new ArrayList<>();
+                            grpFields.add(field);
+                            groupedFields.put(groupName,grpFields);
+                            groupsOrder.add(groupName);
+                        }
                     }
-//                else if(controlType.equalsIgnoreCase("ageDate")) {
-//                    DynamicUIComponent primaryLang = DynamicUIComponent.getSpinnerView("pLang_"+fieldName,primaryLangLabel,this.getContext());
-//                    DynamicUIComponent secondaryLang = DynamicUIComponent.getSpinnerView("sLang_"+fieldName,secondaryLangLabel,this.getContext());
-//                    primaryLang.setTheOtherComponent(secondaryLang);
-//                    secondaryLang.setTheOtherComponent(primaryLang);
-//
-//                    primaryLang.setRequired(isRequired);
-//                    secondaryLang.setRequired(isRequired);
-//
-//
-//                    loadedFields.add(primaryLang);//We dont need to add secondary Language Component to the list, as it is set to primaryLang's object the Other Component
-//                    pnlPrimary.addView(primaryLang.getComponentView());
-//                    pnlSecondary.addView(secondaryLang.getComponentView());
-//                }
-
                 }
 
 
             }
+
+            for(String key:groupsOrder) {
+                for (JSONObject field : groupedFields.get(key)) {
+                    String fieldName = field.getString("id");
+                    String controlType = field.getString("controlType");
+                    boolean isRequired = field.getBoolean("inputRequired");
+                    if (controlType.equalsIgnoreCase("textbox")) {
+                        DynamicComponent component = factory.getTextComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                        pnlPrimary.addView((View) component.getPrimaryView());
+                        pnlSecondary.addView((View) component.getSecondaryView());
+                    } else if (controlType.equalsIgnoreCase("ageDate")) {
+                        DynamicComponent component = factory.getAgeDateComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                        pnlPrimary.addView((View) component.getPrimaryView());
+                        pnlSecondary.addView((View) component.getSecondaryView());
+                    } else if (controlType.contains("button")) {
+                        DynamicComponent component = factory.getSwitchComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                        pnlPrimary.addView((View) component.getPrimaryView());
+                        pnlSecondary.addView((View) component.getSecondaryView());
+                    } else if (controlType.equalsIgnoreCase("dropdown")) {
+                        DynamicComponent component = factory.getDropdownComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                        pnlPrimary.addView((View) component.getPrimaryView());
+                        pnlSecondary.addView((View) component.getSecondaryView());
+                    }
+                }
+            }
+
+
+
 
 
         } catch (JSONException e) {
