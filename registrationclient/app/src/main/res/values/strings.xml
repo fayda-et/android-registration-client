@@ -51,4 +51,15 @@
     <string name="lost_id">Lost ID</string>
     <string name="update_record">Update Record</string>
 
+    <string name="document_upload">Documents</string>
+    <string name="poi_prompt">Choose a POI</string>
+    <string-array name="poi_list">
+        <item>Birth certificate</item>
+        <item>Marriage certificate</item>
+        <item>Kebele ID</item>
+        <item>Civil servant ID</item>
+        <item>Driving license</item>
+
+    </string-array>
+
 </resources>

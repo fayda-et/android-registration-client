@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".ui.document.DecumentUpload"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.RegistrationPopUp"
             android:exported="false" />
         <activity

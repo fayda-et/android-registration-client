@@ -25,49 +25,7 @@
 
 
 
-            <!--<TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
-                android:fontFamily="sans-serif"
-                android:text="Services"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <!--<LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="850dp"
-                android:layout_height="320dp"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                       <ImageView
-                            android:id="@+id/action_image_back"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                           android:layout_centerVertical="true"
-                           android:layout_alignParentRight="true"
-                           android:layout_marginTop="15dp"
-                            app:srcCompat="@drawable/ic_baseline_arrow_back" />
-
-                    <ImageView
-                        android:id="@+id/action_image_search"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/ic_baseline_search" />
-                </RelativeLayout>-->
         <include
             android:id="@+id/include"
             layout="@layout/toolbar"
@@ -77,21 +35,14 @@
             />
 
 
-          <!--  <View
-                android:id="@+id/viewHeader"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
 
-                android:background="@color/colorBackground"
-
-                app:layout_constraintTop_toBottomOf="@id/include"/>-->
 
 
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHeader"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 style="@style/CustomCardViewStyle"
                 app:cardBackgroundColor="@color/colorBackground"
                 android:elevation="5dp"
@@ -103,150 +54,32 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/_14sdp">
 
-                    <TextView
-                        android:id="@+id/textIndicators"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/indicators"
-                        android:textColor="@color/primary_text"
-                        android:textSize="@dimen/_14sdp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
 
                     <LinearLayout
-                        android:id="@+id/layoutNotification"
-                        android:layout_width="0dp"
-
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toStartOf="@id/layoutPendingApproval"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textIndicators">
-
-                        <ImageView
-                            android:layout_width="@dimen/_28sdp"
-                            android:layout_height="@dimen/_28sdp"
-
-                            android:src="@drawable/ic_notification"
-                            app:tint="@color/colorPrimary" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/notification"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_10ssp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/num_of_notification"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_16ssp"/>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/layoutPendingApproval"
-                        android:layout_width="0dp"
-
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toStartOf="@id/layoutUpload"
-                        app:layout_constraintStart_toEndOf="@id/layoutNotification"
-                        app:layout_constraintTop_toBottomOf="@id/textIndicators">
-
-                        <ImageView
-                            android:layout_width="@dimen/_28sdp"
-                            android:layout_height="@dimen/_28sdp"
-
-                            android:src="@drawable/ic_pending_approval"
-                            app:tint="@color/colorPrimary" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/pending_approval"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_10ssp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/num_of_pending_approval"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_16ssp"/>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/layoutUpload"
-                        android:layout_width="0dp"
-
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toStartOf="@id/layoutRegistered"
-                        app:layout_constraintStart_toEndOf="@id/layoutPendingApproval"
-                        app:layout_constraintTop_toBottomOf="@id/textIndicators">
-
-                        <ImageView
-                            android:layout_width="@dimen/_28sdp"
-                            android:layout_height="@dimen/_28sdp"
-
-                            android:src="@drawable/ic_upload"
-                            app:tint="@color/colorPrimary" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/upload"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_10ssp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/num_of_pending_upload"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_16ssp"/>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/layoutRegistered"
-                        android:layout_width="0dp"
-
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:gravity="center"
-                        android:orientation="vertical"
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/layoutUpload"
-                        app:layout_constraintTop_toBottomOf="@id/textIndicators">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                        <ImageView
-                            android:layout_width="@dimen/_28sdp"
-                            android:layout_height="@dimen/_28sdp"
-
-                            android:src="@drawable/ic_registration"
-                            app:tint="@color/colorPrimary" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/registration"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_10ssp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/num_of_registrant"
-                            android:textColor="@color/primary_text"
-                            android:textSize="@dimen/_16ssp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
 
+                            <SearchView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_centerInParent="true"
+                                android:contextClickable="true"
+                                android:tooltipText="@string/search"/>
+
+                        </RelativeLayout>
                     </LinearLayout>
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -296,7 +129,6 @@
                         android:orientation="horizontal"
                         >
 
-                        <!-- Media -->
                         <ImageView
                             android:id="@+id/imageRegistration"
                             android:layout_width="80dp"
@@ -315,7 +147,6 @@
                             android:orientation="vertical"
                             android:padding="16dp">
 
-                            <!-- Title, secondary and supporting text -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -335,7 +166,6 @@
 
                         </LinearLayout>
 
-                        <!-- Buttons -->
 
 
                     </LinearLayout>
@@ -515,7 +345,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Media -->
                         <ImageView
                             android:id="@+id/imagePendingApproval"
                             android:layout_width="80dp"
@@ -534,7 +363,6 @@
                             android:orientation="vertical"
                             android:padding="16dp">
 
-                            <!-- Title, secondary and supporting text -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -627,7 +455,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Media -->
                         <ImageView
                             android:id="@+id/imageUpload"
                             android:layout_width="80dp"
@@ -646,7 +473,6 @@
                             android:orientation="vertical"
                             android:padding="16dp">
 
-                            <!-- Title, secondary and supporting text -->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -666,7 +492,6 @@
 
                         </LinearLayout>
 
-                        <!-- Buttons -->
 
 
                     </LinearLayout>

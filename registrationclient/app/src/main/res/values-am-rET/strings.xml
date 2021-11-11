@@ -45,5 +45,23 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="update">10 Updates</string>
+    <string name="approval_time">10min ago</string>
+    <string name="access_time_upload">5 min ago</string>
+    <string name="new_registration">Register</string>
+    <string name="lost_id">Lost ID</string>
+    <string name="update_record">Update Record</string>
 
+
+    <string name="document_upload">Documents</string>
+    <string name="poi_prompt">Choose a POI</string>
+    <string-array name="poi_list">
+        <item>Birth certificate</item>
+        <item>Marriage certificate</item>
+        <item>Kebele ID</item>
+        <item>Civil servant ID</item>
+        <item>Driving license</item>
+
+    </string-array>
 </resources>
+
+
