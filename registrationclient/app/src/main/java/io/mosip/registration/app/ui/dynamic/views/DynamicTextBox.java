@@ -27,7 +27,6 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
     public DynamicTextBox(Context context,String langCode,String label,String validation) {
         super(context);
 
-
         languageCode=langCode;
         labelText=label;
         validationRule=validation;
