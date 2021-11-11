@@ -30,9 +30,10 @@ public class DynamicComponentFactory {
         return "";
     }
 
-    public DynamicComponent getTextComponent(JSONObject labels, JSONArray validatorRules) {
+    public DynamicComponent getTextComponent(String fieldName,JSONObject labels, JSONArray validatorRules) {
 
-        DynamicComponent dd = new DynamicComponent(context);
+        DynamicComponent dd = new DynamicComponent(fieldName,context);
+
         try {
             Iterator<String> keys = labels.keys();//Keys are Language codes
 
@@ -79,9 +80,9 @@ public class DynamicComponentFactory {
 
 
 
-    public DynamicComponent getAgeDateComponent(JSONObject labels, JSONArray validatorRules) {
+    public DynamicComponent getAgeDateComponent(String fieldName, JSONObject labels, JSONArray validatorRules) {
 
-        DynamicComponent dd = new DynamicComponent(context);
+        DynamicComponent dd = new DynamicComponent(fieldName,context);
         try {
             Iterator<String> keys = labels.keys();//Keys are Language codes
 
@@ -90,13 +91,6 @@ public class DynamicComponentFactory {
                 DynamicAgeDateBox control = new DynamicAgeDateBox(context,langCode,labels.getString(langCode),getValidationRule(langCode,validatorRules));
                 dd.addView(control);
             }
-
-
-
-
-            //This should be set by Iterating through all added objects
-            //setTextWatcher(object1, object2);
-            //setTextWatcher(object2,object1);
         }catch (Exception ex){
 
         }
@@ -104,9 +98,9 @@ public class DynamicComponentFactory {
     }
 
 
-    public DynamicComponent getSwitchComponent(JSONObject labels, JSONArray validatorRules) {
+    public DynamicComponent getSwitchComponent(String fieldName, JSONObject labels, JSONArray validatorRules) {
 
-        DynamicComponent dd = new DynamicComponent(context);
+        DynamicComponent dd = new DynamicComponent(fieldName,context);
         try {
             Iterator<String> keys = labels.keys();//Keys are Language codes
 
@@ -128,9 +122,9 @@ public class DynamicComponentFactory {
         return dd;
     }
 
-    public DynamicComponent getDropdownComponent(JSONObject labels, JSONArray validatorRules) {
+    public DynamicComponent getDropdownComponent(String fieldName, JSONObject labels, JSONArray validatorRules) {
 
-        DynamicComponent dd = new DynamicComponent(context);
+        DynamicComponent dd = new DynamicComponent(fieldName,context);
         try {
             Iterator<String> keys = labels.keys();//Keys are Language codes
 

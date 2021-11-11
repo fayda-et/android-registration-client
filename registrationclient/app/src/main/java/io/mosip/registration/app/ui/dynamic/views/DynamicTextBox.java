@@ -85,6 +85,26 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
         editText.setText(value);
     }
 
+    @Override
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public boolean validateEntry() {
+        ViewGroup pnl = findViewById(R.id.control_holder);
+
+        if(getValue().length()>0){
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+            return true;
+        }
+
+        else{
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_error));
+            return false;
+        }
+    }
+
     public EditText getEditText() {
         return editText;
     }

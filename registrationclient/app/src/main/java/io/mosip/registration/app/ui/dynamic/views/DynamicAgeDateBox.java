@@ -143,4 +143,24 @@ final int layoutId =R.layout.dynamic_agedate_box;
         }
     }
 
+    @Override
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public boolean validateEntry() {
+        ViewGroup pnl = findViewById(R.id.dob_control_holder);
+
+        if(getValue().length()>3){
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+            return true;
+        }
+
+        else{
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_error));
+            return false;
+        }
+    }
+
 }

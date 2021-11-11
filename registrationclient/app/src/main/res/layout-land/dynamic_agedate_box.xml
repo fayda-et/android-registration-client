@@ -27,6 +27,7 @@
             <EditText
                 android:id="@+id/dob_date"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_marginLeft="32dp"
                 android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
                 android:id="@+id/dob_month"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-
+                android:inputType="number"
                 android:layout_height="wrap_content"
                 android:hint="MM"/>
 
@@ -58,6 +59,7 @@
             <EditText
                 android:id="@+id/dob_year"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="YYYY"/>
@@ -77,6 +79,7 @@
             <EditText
                 android:id="@+id/dob_age"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Age"/>

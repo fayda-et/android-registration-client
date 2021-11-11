@@ -116,4 +116,14 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
        }
     }
 
+    @Override
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public boolean validateEntry() {
+        return true;
+    }
+
 }
