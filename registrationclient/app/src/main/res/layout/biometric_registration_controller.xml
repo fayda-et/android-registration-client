@@ -24,7 +24,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/pnlScannerArea"
-                android:background="@color/primaryColor"
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
@@ -82,7 +82,7 @@
                     android:id="@+id/imgSelectedModality"
                     android:layout_width="73dp"
                     android:layout_height="173dp"
-                    android:background="@color/primaryDarkColor"
+                    android:background="@color/colorPrimaryDark"
                     android:layout_weight="50"
                     android:layout_gravity="center"
                     />

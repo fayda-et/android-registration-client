@@ -114,40 +114,30 @@ tools:context=".DemographicRegistrationController">
     android:layout_height="wrap_content"
     android:background="@color/backgroundColor"
     app:layout_constraintBottom_toBottomOf="parent">
-
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="@string/back"
-        android:background="@drawable/rounded_corner"
+        android:layout_marginEnd="16dp"
+
+        android:text="@string/close"
+        app:icon="@drawable/outline_close_24"
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNext"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/rounded_corner"
         android:text="@string/next"
+        android:layout_marginEnd="16dp"
+        app:icon="@drawable/outline_arrow_forward_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="@string/reset"
-        android:background="@drawable/rounded_corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnNext"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

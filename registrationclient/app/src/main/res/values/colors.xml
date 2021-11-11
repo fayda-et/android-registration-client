@@ -3,9 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primaryColor">#1c8fcb</color>
-    <color name="primaryLightColor">#64bffe</color>
-    <color name="primaryDarkColor">#00629a</color>
+    <color name="colorPrimary">#1c8fcb</color>
+    <color name="colorPrimaryLight">#64bffe</color>
+    <color name="colorPrimaryDark">#00629a</color>
     <color name="iconColor">#00629a</color>
     <color name="secondaryColor">#6d78ff</color>
     <color name="secondaryLightColor">#a4a7ff</color>
