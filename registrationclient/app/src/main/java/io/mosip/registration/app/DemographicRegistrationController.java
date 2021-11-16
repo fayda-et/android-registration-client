@@ -132,6 +132,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
             LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             LinearLayout pnlPrmLangSelection =findViewById(R.id.pnlPrimaryLanguageSelection);
             LinearLayout pnlSecLangSelection =findViewById(R.id.pnlSecondaryLanguageSelection);
+
             for (Iterator<String> it = languages.keys(); it.hasNext(); ) {
                 String lang = it.next();
                 String disc= languages.getString(lang);
@@ -169,6 +170,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
                         public void onClick(View view) {
                             ViewPager pager = findViewById(R.id.pnlSecondaryLanguagePanel);
                            pager.setCurrentItem(Integer.parseInt(langButton.getTag().toString()),true);
+
                         }
                     });
 
@@ -206,7 +208,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
 
             //Populate secondary languages ui
             for(int i=0;i<secondaryLanguages.size();i++){
-                ((MainPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i), 0);
+                ((MainPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i));
                 pnlSecondary.getAdapter().notifyDataSetChanged();
             }
 

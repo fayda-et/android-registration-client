@@ -29,6 +29,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:layout_width="0dp"
+                android:maxLength="2"
                 android:layout_marginLeft="32dp"
                 android:layout_height="wrap_content"
                 android:hint="DD"/>
@@ -46,6 +47,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:inputType="number"
+                android:maxLength="2"
                 android:layout_height="wrap_content"
                 android:hint="MM"/>
 
@@ -61,6 +63,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:layout_width="0dp"
+                android:maxLength="4"
                 android:layout_height="wrap_content"
                 android:hint="YYYY"/>
 
@@ -81,6 +84,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:layout_width="0dp"
+                android:maxLength="3"
                 android:layout_height="wrap_content"
                 android:hint="Age"/>
         </LinearLayout>

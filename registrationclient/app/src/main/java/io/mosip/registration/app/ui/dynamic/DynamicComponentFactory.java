@@ -32,7 +32,7 @@ public class DynamicComponentFactory {
 
     public DynamicComponent getTextComponent(String fieldName,JSONObject labels, JSONArray validatorRules) {
 
-        DynamicComponent dd = new DynamicComponent(fieldName,context);
+        DynamicComponent dComp = new DynamicComponent(fieldName,context);
 
         try {
             Iterator<String> keys = labels.keys();//Keys are Language codes
@@ -40,43 +40,19 @@ public class DynamicComponentFactory {
             while (keys.hasNext()) {
                 String langCode = keys.next();
                 DynamicTextBox control = new DynamicTextBox(context,langCode,labels.getString(langCode),getValidationRule(langCode,validatorRules));
-                dd.addView(control);
+                dComp.addView(control);
+
             }
 
-
-
-
-            //This should be set by Iterating through all added objects
-            //setTextWatcher(object1, object2);
-            //setTextWatcher(object2,object1);
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-        return dd;
+        return dComp;
     }
 
 
 
-    private void setTextWatcher(DynamicTextBox mainObject, DynamicTextBox secondObject){
-        TextWatcher textWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                //Todo: This is for test only, should be moved to external class (Translator, Validator ...)
-                secondObject.setValue(mainObject.toString());
-
-            }
-        };
-        mainObject.setTextChangeListener(textWatcher);
-    }
 
 
 

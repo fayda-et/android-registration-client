@@ -1,17 +1,22 @@
 package io.mosip.registration.app.ui.dynamic;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.mosip.registration.app.R;
+
 public class DynamicComponent    {
     private List<DynamicView> views;
     protected Context context;
-
-
-
     String fieldName="";
+    private boolean editStared=false;
 
     public DynamicComponent(String fieldName, Context context){
         this.context = context;
@@ -36,7 +41,35 @@ public class DynamicComponent    {
     }
     public DynamicView addView(DynamicView view){
         views.add(view);
+        view.setOnFocusChangeListener(getFocusChangeListener());
         return view;
+    }
+
+    private View.OnFocusChangeListener getFocusChangeListener(){
+        View.OnFocusChangeListener listener= new View.OnFocusChangeListener() {
+    @Override
+    public void onFocusChange(View view, boolean b) {
+        if(editStared==false && b==false) {
+            editStared = true;
+
+
+            String value = "";
+
+            if (view.getTag() != null) {
+                value = ((DynamicView) view.getTag()).getValue();
+            }
+            for (DynamicView vw : views) {
+                vw.setValue(value);
+            }
+            editStared = false;
+        }
+        else
+            view.performClick();
+
+    }
+    };
+        return listener;
+
     }
 
     public int getViewCount(){

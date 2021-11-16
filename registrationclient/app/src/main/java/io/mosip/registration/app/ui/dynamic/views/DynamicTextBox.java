@@ -2,8 +2,10 @@ package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -30,8 +32,11 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
         languageCode=langCode;
         labelText=label;
         validationRule=validation;
+
         init(context);
     }
+
+
 
     public DynamicTextBox(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -74,6 +79,8 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
         });
         //editText.setHint(labelText);
         ((TextView) findViewById(R.id.textbox_label)).setText(labelText);
+
+        editText.setTag(this);
     }
 
     public String getValue(){
@@ -108,7 +115,9 @@ public class DynamicTextBox extends LinearLayout implements DynamicView {
     public EditText getEditText() {
         return editText;
     }
-    public void setTextChangeListener(TextWatcher textWatcher){
-        editText.addTextChangedListener(textWatcher);
+
+    public void setOnFocusChangeListener( View.OnFocusChangeListener watcher){
+        editText.setOnFocusChangeListener(watcher);
+
     }
 }

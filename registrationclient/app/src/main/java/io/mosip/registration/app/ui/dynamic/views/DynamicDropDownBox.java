@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,7 +16,7 @@ import io.mosip.registration.app.R;
 import io.mosip.registration.app.ui.dynamic.DynamicView;
 
 public class DynamicDropDownBox extends LinearLayout implements DynamicView {
-    Spinner drpDown;
+    Spinner spinner;
 
     String languageCode="";
     String labelText="";
@@ -53,15 +54,15 @@ public class DynamicDropDownBox extends LinearLayout implements DynamicView {
     }
 
     private void initComponents() {
-         drpDown= findViewById(R.id.dropdown_input);
+         spinner = findViewById(R.id.dropdown_input);
 
-        drpDown.setOnFocusChangeListener(new OnFocusChangeListener() {
+        spinner.setFocusableInTouchMode(true);
+        spinner.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
                 ViewGroup pnl = findViewById(R.id.dropdown_control_holder);
                 if(b){
                     pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_focused));
-
                 }
                 else{
                     pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
@@ -71,25 +72,31 @@ public class DynamicDropDownBox extends LinearLayout implements DynamicView {
             }
         });
 
+        spinner.setTag(this);
 
     }
 
     public String getValue(){
-        String dob="";
-        //dob =dateBox.getText().toString()+"/"+monthBox.getText().toString()+"/"+yearBox.getText().toString();
-        return dob;
+        String value="";
+         value = spinner.getSelectedItem().toString();
+
+        return value;
     }
 
     @Override
     public void setValue(String value) {
-        String[] dob = value.split("/");
-        if(dob.length==3){
-//            dateBox.setText(dob[0]);
-//            monthBox.setText(dob[1]);
-//            yearBox.setText(dob[2]);
-        }
+      spinner.setSelection(getIndex(spinner,value));
     }
 
+    private int getIndex(Spinner spinner, String val){
+        for (int i=0;i<spinner.getCount();i++){
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(val)){
+                return i;
+            }
+        }
+
+        return 0;
+    }
     @Override
     public String getLanguageCode() {
         return languageCode;
@@ -108,6 +115,12 @@ public class DynamicDropDownBox extends LinearLayout implements DynamicView {
             pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_error));
             return false;
         }
+    }
+
+    public void setOnFocusChangeListener( View.OnFocusChangeListener watcher){
+
+      spinner.setOnFocusChangeListener(watcher);
+
     }
 
 }
