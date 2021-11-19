@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".DemographicRegistrationController"
+            android:name=".BiometricRegistrationController"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
