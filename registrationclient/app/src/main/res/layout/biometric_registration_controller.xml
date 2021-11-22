@@ -8,7 +8,7 @@
     tools:context=".BiometricRegistrationController">
 
     <LinearLayout
-        android:id="@+id/pnlTopMainPanel"
+        android:id="@+id/pnlLeftPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="45dp"
@@ -23,8 +23,8 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/pnlScannerArea"
-                android:background="@color/primaryColor"
+                android:id="@+id/pnlSpinnerPanel"
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="50"
@@ -59,7 +59,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/pnlSelectedModalityArea"
+            android:id="@+id/pnlScannedPreview"
             android:background="@color/secondaryColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,7 +67,7 @@
             >
 
             <LinearLayout
-                android:id="@+id/pnlCurrentModalityViewArea"
+                android:id="@+id/pnlSelectedPreview"
                 android:layout_width="match_parent"
                 android:layout_height="273dp"
                 android:orientation="horizontal"
@@ -79,7 +79,7 @@
                 android:weightSum="1">
 
                 <ImageView
-                    android:id="@+id/imgSelectedModality"
+                    android:id="@+id/imgSelectedPreview"
                     android:layout_width="73dp"
                     android:layout_height="173dp"
                     android:background="@color/primaryDarkColor"
@@ -90,7 +90,7 @@
 
 
             <LinearLayout
-                android:id="@+id/pnlModalityCommandsPanel"
+                android:id="@+id/pnlActionPanel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/control_color"
@@ -98,17 +98,17 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pnlCurrentModalityViewArea">
+                app:layout_constraintTop_toBottomOf="@+id/pnlSelectedPreview">
 
                 <Button
-                    android:id="@+id/btnPreviousModality"
+                    android:id="@+id/btnCapture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/previous" />
 
                 <Button
-                    android:id="@+id/btnNextModality"
+                    android:id="@+id/btnUpload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

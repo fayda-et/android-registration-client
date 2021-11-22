@@ -1,2 +1,3 @@
 include ':app'
+include ':scanlibrary'
 rootProject.name='Mobile Registration Client'

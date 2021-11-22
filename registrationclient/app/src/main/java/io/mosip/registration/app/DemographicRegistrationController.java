@@ -36,6 +36,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
     ViewGroup pnlPrimary = null;
     ViewPager pnlSecondary = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +96,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
                     languages=item.getJSONObject("label");
                     for(int fieldIndex=0;fieldIndex<fields.length();fieldIndex++) {
                         JSONObject field = fields.getJSONObject(fieldIndex);
+
                         String groupName = field.getString("alignmentGroup");
                         if (groupName == null) {
                             groupName = "null";

@@ -41,4 +41,6 @@
     <string name="introducerRelation">Introducer Relation</string>
     <string name="Iris">Iris</string>
     <string name="scan">Scan</string>
+    <string name="finger">Finger</string>
+    <string name="face">Face</string>
 </resources>
