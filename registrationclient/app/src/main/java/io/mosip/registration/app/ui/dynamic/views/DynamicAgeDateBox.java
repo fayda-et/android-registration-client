@@ -2,6 +2,8 @@ package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+
+import java.util.Calendar;
+import java.util.Date;
 
 import io.mosip.registration.app.R;
 import io.mosip.registration.app.ui.dynamic.DynamicView;
@@ -65,6 +70,13 @@ final int layoutId =R.layout.dynamic_agedate_box;
         monthBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
         yearBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
         ageBox.setBackgroundTintMode(PorterDuff.Mode.CLEAR);
+
+
+        dateBox.setTag(this);
+        monthBox.setTag(this);
+        yearBox.setTag(this);
+        ageBox.setTag(this);
+
         dateBox.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
@@ -125,11 +137,38 @@ final int layoutId =R.layout.dynamic_agedate_box;
 
             }
         });
+
+        ageBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String age = editable.toString();
+                if(age.isEmpty()==false){
+                    int ageInt = Integer.parseInt(age)*-1;
+                    Calendar now = Calendar.getInstance();
+                    now.add(Calendar.YEAR,ageInt);
+                    String dob = now.get(Calendar.DATE)+"/"+(now.get(Calendar.MONTH) + 1) + "/"+ now.get(Calendar.YEAR);
+                    ((DynamicView)ageBox.getTag()).setValue(dob);
+                }
+            }
+        });
+
+
     }
 
     public String getValue(){
         String dob="";
         dob =dateBox.getText().toString()+"/"+monthBox.getText().toString()+"/"+yearBox.getText().toString();
+
         return dob;
     }
 
@@ -141,6 +180,36 @@ final int layoutId =R.layout.dynamic_agedate_box;
             monthBox.setText(dob[1]);
             yearBox.setText(dob[2]);
         }
+
+    }
+
+    @Override
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public boolean validateEntry() {
+        ViewGroup pnl = findViewById(R.id.dob_control_holder);
+
+        if(getValue().length()>3){
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner));
+            return true;
+        }
+
+        else{
+            pnl.setBackground(getResources().getDrawable(R.drawable.rounded_corner_error));
+            return false;
+        }
+    }
+
+    public void setOnFocusChangeListener( View.OnFocusChangeListener watcher){
+        ageBox.setOnFocusChangeListener(watcher);
+        dateBox.setOnFocusChangeListener(watcher);
+        yearBox.setOnFocusChangeListener(watcher);
+        monthBox.setOnFocusChangeListener(watcher);
+
+
     }
 
 }

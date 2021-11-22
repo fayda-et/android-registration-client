@@ -4,9 +4,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#1c8fcb</color>
-    <color name="primaryLightColor">#64bffe</color>
-    <color name="primaryDarkColor">#00629a</color>
+    <color name="colorPrimaryLight">#64bffe</color>
+    <color name="colorPrimaryDark">#00629a</color>
     <color name="iconColor">#00629a</color>
+    <color name="errorColor">#9A005C</color>
     <color name="secondaryColor">#6d78ff</color>
     <color name="secondaryLightColor">#a4a7ff</color>
     <color name="secondaryDarkColor">#2d4ccb</color>
@@ -20,5 +21,5 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="control_color">#27AE60</color>
-    <color name="colorGrey">#cccccc</color>
+    <color name="control_inactive">#257F868A</color>
 </resources>

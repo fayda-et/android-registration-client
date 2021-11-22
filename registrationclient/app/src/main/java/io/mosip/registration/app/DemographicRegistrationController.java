@@ -69,13 +69,27 @@ public class DemographicRegistrationController extends AppCompatActivity {
     }
 
 
+    public String getDemographicDataJSON(){
+        String jsonData="{";
+        for(DynamicComponent comp:loadedFields){
+            jsonData=jsonData + comp.getValueJSON() + ",";
+        }
+
+        return jsonData.substring(0,jsonData.lastIndexOf(","))+"}";
+    }
 
 
+    public void nextClick(View view){
+        String allData=getDemographicDataJSON();
+
+        System.out.println("The Data is");
+        System.out.println(allData);
+        System.out.println("OVER");
+    }
 
     private List<DynamicComponent> loadedFields = new ArrayList<>();
     private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
     private void loadUI() {
-
 
 
         pnlPrimary.removeAllViews();
@@ -114,19 +128,13 @@ public class DemographicRegistrationController extends AppCompatActivity {
 
 
             }
-//            android:layout_width="match_parent"
-//            android:layout_height="match_parent"
-//            android:layout_marginStart="8dp"
-//            android:layout_marginTop="8dp"
-//            android:layout_weight="1"
-//            android:background="@color/backgroundColor"
-//            android:orientation="horizontal"
-//            android:paddingHorizontal="16dp"
+
             List<LinearLayout> secondaryLanguages=new ArrayList<>();
             int langCount=0;
             LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             LinearLayout pnlPrmLangSelection =findViewById(R.id.pnlPrimaryLanguageSelection);
             LinearLayout pnlSecLangSelection =findViewById(R.id.pnlSecondaryLanguageSelection);
+
             for (Iterator<String> it = languages.keys(); it.hasNext(); ) {
                 String lang = it.next();
                 String disc= languages.getString(lang);
@@ -164,6 +172,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
                         public void onClick(View view) {
                             ViewPager pager = findViewById(R.id.pnlSecondaryLanguagePanel);
                            pager.setCurrentItem(Integer.parseInt(langButton.getTag().toString()),true);
+
                         }
                     });
 
@@ -180,15 +189,17 @@ public class DemographicRegistrationController extends AppCompatActivity {
                     boolean isRequired = field.getBoolean("inputRequired");
                     DynamicComponent component =null;
                     if (controlType.equalsIgnoreCase("textbox")) {
-                         component = factory.getTextComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                         component = factory.getTextComponent(fieldName,field.getJSONObject("label"), field.getJSONArray("validators"));
                     } else if (controlType.equalsIgnoreCase("ageDate")) {
-                         component = factory.getAgeDateComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                         component = factory.getAgeDateComponent(fieldName,field.getJSONObject("label"), field.getJSONArray("validators"));
                     } else if (controlType.contains("button")) {
-                         component = factory.getSwitchComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                         component = factory.getSwitchComponent(fieldName,field.getJSONObject("label"), field.getJSONArray("validators"));
                     } else if (controlType.equalsIgnoreCase("dropdown")) {
-                         component = factory.getDropdownComponent(field.getJSONObject("label"), field.getJSONArray("validators"));
+                         component = factory.getDropdownComponent(fieldName,field.getJSONObject("label"), field.getJSONArray("validators"));
                     }
+
                     if(component!=null) {
+                        loadedFields.add(component);
                         pnlPrimary.addView((View) component.getPrimaryView());
                         for (int i = 0; i < component.getViewCount()-1; i++) {
                             secondaryLanguages.get(i).addView((View) component.getView(i+1));
@@ -199,7 +210,7 @@ public class DemographicRegistrationController extends AppCompatActivity {
 
             //Populate secondary languages ui
             for(int i=0;i<secondaryLanguages.size();i++){
-                ((MainPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i), 0);
+                ((MainPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i));
                 pnlSecondary.getAdapter().notifyDataSetChanged();
             }
 

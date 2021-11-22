@@ -43,5 +43,9 @@
     <string name="finger">Finger</string>
     <string name="face">Face</string>
     <string name="scan">Scan</string>
-    <string name="upload">upload</string>
+    <string name="close">Close</string>
+    <string name="capture">capture</string>
+    <string name="fourLeftFingers">Four Left Fingers</string>
+    <string name="fourRightFingers">Four Right Fingers</string>
+    <string name="twoThumbs">Two Thumb Fingers</string>
 </resources>

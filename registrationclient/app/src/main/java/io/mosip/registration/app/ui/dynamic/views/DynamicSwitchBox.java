@@ -1,6 +1,7 @@
 package io.mosip.registration.app.ui.dynamic.views;
 
 import android.content.Context;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,6 +79,7 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
                 @Override
                 public void onClick(View v) {
                     selectedOption=option.getText().toString();
+
                     for(Button btn:allOptions){
                         if(btn.getText().toString().equalsIgnoreCase(option.getText().toString())==false){
                             btn.setBackground(getResources().getDrawable(R.drawable.button_option_default));
@@ -97,12 +99,13 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
 
 
     public String getValue(){
-
+        System.out.println("Return Value");
         return selectedOption;
     }
 
     @Override
     public void setValue(String value) {
+        System.out.println("Seting Option to:"+value);
        for(Button btn :allOptions){
            if(btn.getText().toString().equalsIgnoreCase(value)){
                selectedOption=value;
@@ -114,6 +117,26 @@ public class DynamicSwitchBox extends LinearLayout implements DynamicView {
                btn.setTextColor(getResources().getColor(R.color.black));
            }
        }
+    }
+
+    @Override
+    public String getLanguageCode() {
+        return languageCode;
+    }
+
+    @Override
+    public boolean validateEntry() {
+        return true;
+    }
+
+    @Override
+    public void setOnFocusChangeListener(View.OnFocusChangeListener watcher){
+
+        for(Button btn :allOptions){
+            btn.setOnFocusChangeListener(watcher);
+            btn.setFocusableInTouchMode(true);
+            btn.setTag(this);
+        }
     }
 
 }
