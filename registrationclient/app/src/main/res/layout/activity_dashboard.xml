@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.home.Dashboard"
+    tools:openDrawer="start">
+
+     <com.google.android.material.navigation.NavigationView
+          android:id="@+id/nav_view"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="start"
+          app:headerLayout="@layout/header"
+          app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/homepage_bg_color"
+        >
+
+
+
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_baseline_menu"
+            />
+
+
+
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeader"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                style="@style/CustomCardViewStyle"
+                app:cardBackgroundColor="@color/colorBackground"
+                android:elevation="5dp"
+
+                app:layout_constraintTop_toBottomOf="@id/include">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_14sdp">
+
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <SearchView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_centerInParent="true"
+                                android:contextClickable="true"
+                                android:tooltipText="@string/search"/>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/cardHeader"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+
+                android:layout_weight="1"
+                android:weightSum="2"
+                >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRegistration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:elevation="1dp"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/white"
+
+                    android:onClick="ShowPopup"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageRegistration"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+
+                            android:layout_marginLeft="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:contentDescription="@string/registration"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_new_registration"
+                            app:tint="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/registration"
+
+                                android:textAppearance="@style/registration"
+                                android:textColor="@color/primary_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/sub_for_registration"
+                                android:textAppearance="@style/sub_title"
+                                android:textColor="?android:attr/textColorSecondary" />
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_update" />
+
+                    <TextView
+                        android:id="@+id/textViewupdates"
+                        android:layout_width="102.18dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/update"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_registration"
+                        app:tint="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/textviewRegistration"
+                        android:layout_width="140dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginLeft="65dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/no_of_registration"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSync"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:background="@color/dashboard_item"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:elevation="1dp"
+                    android:focusable="true"
+                    android:foreground="@drawable/card_forground"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Media -->
+                        <ImageView
+                            android:id="@+id/imageSync"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+
+                            android:layout_marginLeft="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:contentDescription="@string/system_sync"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_sync"
+                            app:tint="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <!-- Title, secondary and supporting text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/system_sync"
+
+                                android:textAppearance="@style/registration"
+                                android:textColor="@color/primary_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/sub_sync"
+                                android:textAppearance="@style/sub_title"
+                                android:textColor="?android:attr/textColorSecondary" />
+
+
+                        </LinearLayout>
+
+                        <!-- Buttons -->
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_access_time" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="102.18dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/time_info"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPendingApproval"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:elevation="1dp"
+                    android:focusable="true"
+                    android:foreground="@drawable/card_forground"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imagePendingApproval"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+
+                            android:layout_marginLeft="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:contentDescription="@string/pending_approval"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_pending_approval"
+                            app:tint="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pending_approval"
+
+                                android:textAppearance="@style/registration"
+                                android:textColor="@color/primary_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/sub_approval"
+                                android:textAppearance="@style/sub_title"
+                                android:textColor="?android:attr/textColorSecondary" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_access_time" />
+
+                    <TextView
+                        android:id="@+id/textViewUpload"
+                        android:layout_width="102.18dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/approval_time"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_sub_pendding"
+                        app:tint="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/textviewUploadInfo"
+                        android:layout_width="140dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginLeft="65dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/num_of_pending_approval"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_50sdp"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:elevation="1dp"
+                    android:focusable="true"
+                    android:foreground="@drawable/card_forground"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageUpload"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+
+                            android:layout_marginLeft="@dimen/_16sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:contentDescription="@string/upload"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_upload"
+                            app:tint="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/upload"
+
+                                android:textAppearance="@style/registration"
+                                android:textColor="@color/primary_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/sub_upload"
+                                android:textAppearance="@style/sub_title"
+                                android:textColor="?android:attr/textColorSecondary" />
+
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_access_time" />
+
+                    <TextView
+                        android:id="@+id/textViewSubUpload"
+                        android:layout_width="102.18dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/access_time_upload"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+                    <ImageView
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="40dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginRight="@dimen/_14sdp"
+                        android:src="@drawable/ic_sub_pendding"
+                        app:tint="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/textviewSubUplodInfo"
+                        android:layout_width="140dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginLeft="65dp"
+                        android:gravity="top"
+                        android:lineSpacingExtra="3sp"
+                        android:text="@string/num_of_pending_upload"
+                        android:textAppearance="@style/sub_info"
+                        android:translationY="-1.61sp" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+
+
+

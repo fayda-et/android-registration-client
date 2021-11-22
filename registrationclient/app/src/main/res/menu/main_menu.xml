@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="@string/nav_home" />
+
+
+        <item
+            android:id="@+id/title_registration"
+            android:icon="@drawable/ic_registration"
+            android:title="@string/nav_registration" />
+        <item
+            android:id="@+id/title_pending_approval"
+            android:icon="@drawable/ic_pending_approval"
+            android:title="@string/nav_pending_approval" />
+
+        <item
+            android:id="@+id/title_notification"
+            android:icon="@drawable/ic_notification"
+            android:title="@string/nav_notification" />
+        <item
+            android:id="@+id/title_sync"
+            android:icon="@drawable/ic_sync"
+            android:title="@string/nav_sync" />
+        <item
+            android:id="@+id/title_pre_registration"
+            android:icon="@drawable/ic_pre_registration"
+            android:title="@string/nav_pre_registration" />
+
+    </group>
+    <item android:title="@string/title_nav_profile_details">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_login"
+                    android:icon="@drawable/ic_login"
+                    android:title="@string/action_sign_in" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="@string/action_sign_out" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/title_setting"
+        android:icon="@drawable/ic_settings"
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_language"
+                    android:icon="@drawable/ic_language"
+                    android:title="@string/action_language_setting" />
+
+
+            </group>
+        </menu>
+    </item>
+
+
+
+
+</menu>
