@@ -96,8 +96,8 @@ public class DocumentController extends AppCompatActivity {
                     for(int fieldIndex=0;fieldIndex<fields.length();fieldIndex++) {
                         JSONObject field = fields.getJSONObject(fieldIndex);
                         DynamicComponent component =null;
-
-                        component = factory.getDropdownComponent(field.getJSONObject("label"), null);
+                        String fieldName = field.getString("id");
+                        component = factory.getDropdownComponent(fieldName,field.getJSONObject("label"), null);
                         if(component!=null) {
                             leftPanel.addView((View) component.getView(2));
 

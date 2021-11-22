@@ -216,7 +216,7 @@
                             android:layout_marginLeft="103dp"
                             android:layout_marginTop="25dp"
                             android:onClick="fingerExceptionClick"
-                            android:background="@drawable/circle_button" />
+                            android:background="@drawable/circle_button"/>
 
                         <ImageView
                             android:layout_width="55dp"

@@ -15,11 +15,17 @@
     <color name="secondaryTextColor">#000000</color>
     <color name="backgroundColor">#f2f6ff</color>
     <color name="colorAccent">#6D78FF</color>
-    <color name="light_blue_600">#FF039BE5</color>
-    <color name="light_blue_900">#FF01579B</color>
-    <color name="light_blue_A200">#FF40C4FF</color>
-    <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>
-    <color name="control_color">#27AE60</color>
-    <color name="control_inactive">#257F868A</color>
+    <color name="colorBackground">#f2f6ff</color>
+    <color name="primary_text">#565865</color>
+    <color name="secondary_text">#9b9a9d</color>
+    <color name="dashboard_item">#9b9a9d</color>
+    <color name="cardview">#cfd8dc</color>
+    <color name="light_black">#484848</color>
+    <color name="homepage_bg_color">#F2F6FF</color>
+    <color name="control_color">#4CAF50</color>
+    <color name="control_inactive">#AAA5A5</color>
+    <color name="colorGrey">#AAA5A5</color>
+
+
+
 </resources>
