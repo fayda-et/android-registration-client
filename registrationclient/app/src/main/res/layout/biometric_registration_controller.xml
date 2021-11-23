@@ -37,6 +37,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+
                     />
 
                 <SeekBar
@@ -118,56 +119,87 @@
 
                 </LinearLayout>
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/pnlLeftFourFinger"
+                    android:id="@+id/pnlLeftFourFingers"
                     android:orientation="vertical"
                     android:visibility="gone"
-                  >
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center">
+
 
                         <ImageView
-                            android:id="@+id/leftFourFinger"
+                            android:id="@+id/leftLittleFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/left_hand"
-                            android:layout_marginTop="30dp"
-                            android:layout_gravity="center"
-                            />
+                            android:layout_height="164dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/left_little"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
 
 
+                        <ImageView
+                            android:id="@+id/leftRingFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginTop="15dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/leftring"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
+
+                        <ImageView
+                            android:id="@+id/leftMiddleFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="51dp"
+                            android:layout_marginTop="5dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/leftmiddle"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
+
+                        <ImageView
+                            android:id="@+id/leftIndexFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="73dp"
+                            android:layout_marginTop="10dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/leftindex"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
+
+                        <ImageView
+                            android:id="@+id/leftHand"
+                            android:layout_width="89dp"
+                            android:layout_height="130dp"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginTop="70dp"
+                            android:alpha="1"
+                            android:background="@drawable/lefthandbase"
+                            android:backgroundTint="@color/black"
+                            android:onClick="fingerExceptionClick" />
+
+                    </RelativeLayout>
                 </LinearLayout>
 
 
 
 
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:id="@+id/pnlLeftFourFingerOption2SeparteImages2"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:visibility="visible"-->
-<!--                    >-->
-
-<!--                    <ImageView-->
-<!--                        android:layout_width="30dp"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="@drawable/ic_left1"-->
-<!--                        android:adjustViewBounds="true"-->
-<!--                        android:scaleType="centerCrop"-->
-<!--                        />-->
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:background="@drawable/ic_left2"-->
-<!--                        android:adjustViewBounds="true"-->
-<!--                        android:scaleType="fitXY"-->
-<!--                        />-->
-
-
-
-<!--                </LinearLayout>-->
 
 
 
@@ -179,53 +211,73 @@
                     android:visibility="visible"
                     android:weightSum="1"
                     >
+
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:layout_gravity="center"
-                        >
+                       >
 
                         <ImageView
-                            android:id="@+id/rightFourFinger"
+                            android:id="@+id/rightIndexFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-
-                            android:background="@drawable/right_hand"
-                            android:onClick="fingerExceptionClick" />
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:onClick="fingerExceptionClick"
-                            android:background="@drawable/circle_button"/>
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="63dp"
-                            android:layout_marginTop="13dp"
-                            android:onClick="fingerExceptionClick"
-                            android:background="@drawable/circle_button"/>
-
-
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="103dp"
+                            android:layout_height="175dp"
+                            android:layout_marginLeft="-1dp"
                             android:layout_marginTop="25dp"
-                            android:onClick="fingerExceptionClick"
-                            android:background="@drawable/circle_button"/>
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/rightindex"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
 
                         <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="133dp"
-                            android:layout_marginTop="55dp"
-                            android:onClick="fingerExceptionClick"
-                            android:background="@drawable/circle_button" />
+                            android:id="@+id/rightMiddleFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="33dp"
+                            android:layout_marginTop="5dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/rightmiddle"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
 
+                        <ImageView
+                            android:id="@+id/rightRingFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="188dp"
+                            android:layout_marginLeft="55dp"
+                            android:layout_marginTop="10dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/rightring"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
+
+                        <ImageView
+                            android:id="@+id/rightLittleFinger"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="75dp"
+                            android:layout_marginTop="30dp"
+                            android:adjustViewBounds="true"
+                            android:alpha="1"
+                            android:background="@drawable/rightlittle"
+                            android:backgroundTintMode="src_atop"
+                            android:onClick="fingerExceptionClick" />
+
+                        <ImageView
+                            android:id="@+id/right"
+                            android:layout_width="89dp"
+                            android:layout_height="130dp"
+
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="80dp"
+
+                            android:alpha="1"
+                            android:background="@drawable/righthandbase"
+                            android:backgroundTint="@color/black"
+                            android:onClick="fingerExceptionClick" />
                     </RelativeLayout>
                 </LinearLayout>
 

@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.view.View;
@@ -30,17 +31,20 @@ import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
 import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
 
-public class DemographicRegistrationController extends AppCompatActivity {
+public class DemographicRegistrationController extends LinearLayout {
 
-
+    final int layoutId =R.layout.demographic_registration_controller;
     ViewGroup pnlPrimary = null;
     ViewPager pnlSecondary = null;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.demographic_registration_controller);
+    Context context=null;
+    public DemographicRegistrationController(Context context)
+    {
+        super(context);
+        this.context=context;
+        init();
+    }
+    private void init(){
+        inflate(context, layoutId, this);
 
         pnlPrimary = findViewById(R.id.pnlPrimaryLanguagePanel);
         //TabLayout tabLayout
@@ -49,6 +53,19 @@ public class DemographicRegistrationController extends AppCompatActivity {
         pnlSecondary.setAdapter(mainPagerAdapter);
         loadUI();
     }
+    public Context getApplicationContext(){return context;}
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.demographic_registration_controller);
+//
+//        pnlPrimary = findViewById(R.id.pnlPrimaryLanguagePanel);
+//        //TabLayout tabLayout
+//        pnlSecondary = findViewById(R.id.pnlSecondaryLanguagePanel);
+//        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
+//        pnlSecondary.setAdapter(mainPagerAdapter);
+//        loadUI();
+//    }
 
 
 

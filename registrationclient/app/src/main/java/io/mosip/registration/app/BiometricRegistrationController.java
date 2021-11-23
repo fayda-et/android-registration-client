@@ -1,10 +1,19 @@
 package io.mosip.registration.app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.widget.ImageViewCompat;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +32,7 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         modalityPanel = findViewById(R.id.pnlCurrentModalityViewArea);
         currentModalityLable =findViewById(R.id.lblCurrentModality);
         findViewById(R.id.btnException).setVisibility(View.GONE);
+
     }
 
     private void setCurrentModalityIris(){
@@ -156,12 +166,29 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
     }
 
     public void fingerExceptionClick(View view){
+       ImageView imageView= ((ImageView)view);
+        view.setAlpha(0.1F);
+        int id =view.getId();
+        String finger="";
+        switch (id){
+            case R.id.leftLittleFinger:finger=Constants.LEFT_LITTLE_FINGER;break;
+            case R.id.leftRingFinger:finger=Constants.LEFT_RING_FINGER;break;
+            case R.id.leftMiddleFinger:finger=Constants.LEFT_MIDDLE_FINGER;break;
+            case R.id.leftIndexFinger:finger=Constants.LEFT_INDEX_FINGER;break;
 
-//        if(view.getBackground()==getResources().getDrawable(R.drawable.circle_button)){
-            view.setBackground(getResources().getDrawable(R.drawable.circle_button_exception));
-//        }
-//        else {
-//            view.setBackground(getResources().getDrawable(R.drawable.circle_button));
-//        }
+            case R.id.rightLittleFinger:finger=Constants.RIGHT_LITTLE_FINGER;break;
+            case R.id.rightRingFinger:finger=Constants.RIGHT_RING_FINGER;break;
+            case R.id.rightMiddleFinger:finger=Constants.RIGHT_MIDDLE_FINGER;break;
+            case R.id.rightIndexFinger:finger=Constants.RIGHT_INDEX_FINGER;break;
+        }
+        if(biometricExceptions.contains(finger)){
+            biometricExceptions.remove(finger);
+            imageView.setAlpha(1F);
+        }
+        else{
+            biometricExceptions.add(finger);
+            imageView.setAlpha(.25F);
+        }
+
     }
 }
