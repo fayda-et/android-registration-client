@@ -32,6 +32,7 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         modalityPanel = findViewById(R.id.pnlCurrentModalityViewArea);
         currentModalityLable =findViewById(R.id.lblCurrentModality);
         findViewById(R.id.btnException).setVisibility(View.GONE);
+
     }
 
     private void setCurrentModalityIris(){
