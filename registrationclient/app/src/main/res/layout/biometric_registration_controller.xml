@@ -123,7 +123,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pnlLeftFourFingers"
                     android:orientation="vertical"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     >
 
                     <RelativeLayout
@@ -135,11 +135,11 @@
                         <ImageView
                             android:id="@+id/leftLittleFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="164dp"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="35dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="46dp"
                             android:adjustViewBounds="true"
-                            android:background="@drawable/left_little"
+                            android:background="@drawable/left_little_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
@@ -147,47 +147,47 @@
                         <ImageView
                             android:id="@+id/leftRingFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="28dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginTop="25dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/leftring"
+                            android:background="@drawable/left_ring_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/leftMiddleFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="51dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="16dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/leftmiddle"
+                            android:background="@drawable/left_middle_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/leftIndexFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="73dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="72dp"
+                            android:layout_marginTop="21dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/leftindex"
+                            android:background="@drawable/left_index_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/leftHand"
-                            android:layout_width="89dp"
-                            android:layout_height="130dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="18dp"
                             android:layout_marginTop="70dp"
                             android:alpha="1"
-                            android:background="@drawable/lefthandbase"
+                            android:background="@drawable/left_hand_base"
                             android:backgroundTint="@color/black"
                             android:onClick="fingerExceptionClick" />
 
@@ -206,7 +206,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pnlRightFourFinger"
                     android:orientation="vertical"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:weightSum="1"
                     >
 
