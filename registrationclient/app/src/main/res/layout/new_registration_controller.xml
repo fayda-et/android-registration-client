@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
     </LinearLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pnlMainScreenPanel"
         android:layout_width="match_parent"
@@ -29,8 +29,9 @@
         app:layout_constraintTop_toBottomOf="@id/languageSelectionPanel"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:background="@color/backgroundColor"
+        android:orientation="vertical"
         >
-    </androidx.viewpager.widget.ViewPager>
+    </androidx.viewpager2.widget.ViewPager2>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

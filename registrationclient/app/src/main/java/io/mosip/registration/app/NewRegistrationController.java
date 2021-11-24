@@ -1,33 +1,23 @@
 package io.mosip.registration.app;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.ArrayMap;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
-import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
 import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
 
 public class NewRegistrationController extends AppCompatActivity {
@@ -122,10 +112,10 @@ public class NewRegistrationController extends AppCompatActivity {
 
 
     // ...
-    private SmartFragmentStatePagerAdapter adapterViewPager;
+    private ViewPager2Adapter adapterViewPager;
 
     // Extend from SmartFragmentStatePagerAdapter now instead for more dynamic ViewPager items
-    public static class MyPagerAdapter extends SmartFragmentStatePagerAdapter {
+    public static class MyPagerAdapter extends ViewPager2Adapter {
         private static int NUM_ITEMS = 3;
 
         public MyPagerAdapter(FragmentManager fragmentManager) {
