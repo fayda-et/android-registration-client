@@ -2,11 +2,13 @@ package io.mosip.registration.app;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.util.ArrayMap;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -31,29 +33,56 @@ import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
 import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
 
-public class DemographicRegistrationController extends LinearLayout {
+public class DemographicRegistrationController extends Fragment {
 
     final int layoutId =R.layout.demographic_registration_controller;
+    View theView =null;
     ViewGroup pnlPrimary = null;
     ViewPager pnlSecondary = null;
-    Context context=null;
-    public DemographicRegistrationController(Context context)
-    {
-        super(context);
-        this.context=context;
-        init();
-    }
-    private void init(){
-        inflate(context, layoutId, this);
+    //Context context=null;
+//    public DemographicRegistrationController(Context context)
+//    {
+//       // super(context);
+//       // this.context=context;
+//        init();
+//    }
 
-        pnlPrimary = findViewById(R.id.pnlPrimaryLanguagePanel);
+    public DemographicRegistrationController()
+    {
+       //init();
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        theView= inflater.inflate(R.layout.demographic_registration_controller, container, false);
+        init();
+        return theView;
+    }
+
+    private void init(){
+        //inflate(context, layoutId, this);
+
+        pnlPrimary = theView.findViewById(R.id.pnlPrimaryLanguagePanel);
         //TabLayout tabLayout
-        pnlSecondary = findViewById(R.id.pnlSecondaryLanguagePanel);
+        pnlSecondary = theView.findViewById(R.id.pnlSecondaryLanguagePanel);
         MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
         pnlSecondary.setAdapter(mainPagerAdapter);
         loadUI();
     }
-    public Context getApplicationContext(){return context;}
+    public Context getApplicationContext(){return theView.getContext();}
 
 
     public String loadJSONFromResource(int resourceID) {
@@ -136,8 +165,8 @@ public class DemographicRegistrationController extends LinearLayout {
             List<LinearLayout> secondaryLanguages=new ArrayList<>();
             int langCount=0;
             LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            LinearLayout pnlPrmLangSelection =findViewById(R.id.pnlPrimaryLanguageSelection);
-            LinearLayout pnlSecLangSelection =findViewById(R.id.pnlSecondaryLanguageSelection);
+            LinearLayout pnlPrmLangSelection =theView.findViewById(R.id.pnlPrimaryLanguageSelection);
+            LinearLayout pnlSecLangSelection =theView.findViewById(R.id.pnlSecondaryLanguageSelection);
 
             for (Iterator<String> it = languages.keys(); it.hasNext(); ) {
                 String lang = it.next();
@@ -174,7 +203,7 @@ public class DemographicRegistrationController extends LinearLayout {
                     langButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            ViewPager pager = findViewById(R.id.pnlSecondaryLanguagePanel);
+                            ViewPager pager = theView.findViewById(R.id.pnlSecondaryLanguagePanel);
                            pager.setCurrentItem(Integer.parseInt(langButton.getTag().toString()),true);
 
                         }
