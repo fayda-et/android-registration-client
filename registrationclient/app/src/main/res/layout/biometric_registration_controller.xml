@@ -219,36 +219,36 @@
                         <ImageView
                             android:id="@+id/rightIndexFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="175dp"
-                            android:layout_marginLeft="-1dp"
-                            android:layout_marginTop="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="31dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/rightindex"
+                            android:background="@drawable/right_index_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/rightMiddleFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="33dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="26dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/rightmiddle"
+                            android:background="@drawable/right_middle_finge"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/rightRingFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="188dp"
-                            android:layout_marginLeft="55dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50.5dp"
+                            android:layout_marginTop="35dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/rightring"
+                            android:background="@drawable/right_ringer_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
@@ -260,7 +260,7 @@
                             android:layout_marginTop="58dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:backgroundTint="@color/control_color"
+                            android:backgroundTint="@color/black"
                             android:background="@drawable/right_little_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
@@ -275,7 +275,7 @@
 
                             android:alpha="1"
                             android:background="@drawable/right_hand_base"
-                            android:backgroundTint="@color/control_color"
+                            android:backgroundTint="@color/black"
                             android:onClick="fingerExceptionClick" />
                     </RelativeLayout>
                 </LinearLayout>
