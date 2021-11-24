@@ -54,19 +54,6 @@ public class DemographicRegistrationController extends LinearLayout {
         loadUI();
     }
     public Context getApplicationContext(){return context;}
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.demographic_registration_controller);
-//
-//        pnlPrimary = findViewById(R.id.pnlPrimaryLanguagePanel);
-//        //TabLayout tabLayout
-//        pnlSecondary = findViewById(R.id.pnlSecondaryLanguagePanel);
-//        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
-//        pnlSecondary.setAdapter(mainPagerAdapter);
-//        loadUI();
-//    }
-
 
 
     public String loadJSONFromResource(int resourceID) {

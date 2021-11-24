@@ -108,10 +108,10 @@ public class NewRegistrationController extends AppCompatActivity {
     private void loadUI() {
 
         DemographicRegistrationController domo = new DemographicRegistrationController(getApplicationContext());
-        DemographicRegistrationController domo2 = new DemographicRegistrationController(getApplicationContext());
+
 
         ((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(domo);
-        ((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(domo2);
+        //((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(biom);
         pnlMainScreen.getAdapter().notifyDataSetChanged();
         pnlMainScreen.setCurrentItem(0);
     }

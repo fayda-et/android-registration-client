@@ -4,63 +4,63 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml
+6-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="31" />
-7-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml
+7-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml
 8
 9    <uses-feature
-9-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:4:5-6:35
+9-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:4:5-6:35
 10        android:name="android.hardware.camera"
-10-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:5:9-47
+10-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:5:9-47
 11        android:required="true" />
-11-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:6:9-32
+11-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:6:9-32
 12
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:8:5-65
-13-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:8:22-62
+13-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:8:5-65
+13-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:8:22-62
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:9:5-80
-14-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:9:22-77
+14-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:9:5-80
+14-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:9:22-77
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:10:5-81
-15-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:10:22-78
+15-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:10:5-81
+15-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:10:22-78
 16
 17    <application
-17-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:11:5-31:19
+17-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:11:5-31:19
 18        android:allowBackup="true"
-18-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:12:9-35
+18-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:12:9-35
 19        android:hardwareAccelerated="true"
-19-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:14:9-43
+19-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:14:9-43
 20        android:label="@string/app_name"
-20-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:15:9-41
+20-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:15:9-41
 21        android:largeHeap="true" >
-21-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:13:9-33
+21-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:13:9-33
 22        <activity
-22-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:16:9-20:20
+22-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:16:9-20:20
 23            android:name="com.scanlibrary.ScanActivity"
-23-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:17:13-41
+23-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:17:13-41
 24            android:configChanges="orientation|screenSize"
-24-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:18:13-59
+24-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:18:13-59
 25            android:label="@string/app_name" >
-25-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:19:13-45
+25-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:19:13-45
 26        </activity>
 27
 28        <provider
-28-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:22:9-30:20
+28-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:22:9-30:20
 29            android:name="androidx.core.content.FileProvider"
-29-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:23:13-62
+29-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:23:13-62
 30            android:authorities="com.scanlibrary.provider"
-30-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:24:13-59
+30-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:24:13-59
 31            android:exported="false"
-31-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:25:13-37
+31-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:25:13-37
 32            android:grantUriPermissions="true" >
-32-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:26:13-47
+32-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:26:13-47
 33            <meta-data
-33-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:27:13-29:57
+33-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:27:13-29:57
 34                android:name="android.support.FILE_PROVIDER_PATHS"
-34-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:28:17-67
+34-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:28:17-67
 35                android:resource="@xml/provider_paths" />
-35-->/media/dereje/Data/MobileApp/eluproj/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:29:17-55
+35-->/mnt/Data/NID/mobile_reg_client/android-registration-client/registrationclient/scanlibrary/src/main/AndroidManifest.xml:29:17-55
 36        </provider>
 37    </application>
 38

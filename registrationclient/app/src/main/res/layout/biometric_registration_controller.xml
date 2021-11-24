@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_corner_container"
     tools:context=".BiometricRegistrationController">
 
     <LinearLayout
@@ -20,40 +19,39 @@
         app:layout_constraintTop_toTopOf="parent"
         >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/pnlScannerArea"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pnlScannerArea"
 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            >
+
+            <ImageView
+                android:id="@+id/imgScanStream"
+                android:layout_width="283dp"
+                android:layout_height="283dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <SeekBar
+                android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="50"
-               >
-
-                <ImageView
-                    android:id="@+id/imgScanStream"
-                    android:layout_width="283dp"
-                    android:layout_height="283dp"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-
-                    />
-
-                <SeekBar
-                    android:id="@+id/seekBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="50dp"
-                    android:progress="75"
-                    android:progressTint="@color/control_color"
-                    android:thumbTint="@color/control_color"
-                    android:tooltipText="75%"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imgScanStream" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:progress="75"
+                android:progressTint="@color/control_color"
+                android:thumbTint="@color/control_color"
+                android:tooltipText="75%"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgScanStream" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -216,7 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
                         android:layout_gravity="center"
-                       >
+                        >
 
                         <ImageView
                             android:id="@+id/rightIndexFinger"
@@ -257,26 +255,27 @@
                         <ImageView
                             android:id="@+id/rightLittleFinger"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="75dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="67dp"
+                            android:layout_marginTop="58dp"
                             android:adjustViewBounds="true"
                             android:alpha="1"
-                            android:background="@drawable/rightlittle"
+                            android:backgroundTint="@color/control_color"
+                            android:background="@drawable/right_little_finger"
                             android:backgroundTintMode="src_atop"
                             android:onClick="fingerExceptionClick" />
 
                         <ImageView
                             android:id="@+id/right"
-                            android:layout_width="89dp"
-                            android:layout_height="130dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
 
                             android:layout_marginLeft="0dp"
                             android:layout_marginTop="80dp"
 
                             android:alpha="1"
-                            android:background="@drawable/righthandbase"
-                            android:backgroundTint="@color/black"
+                            android:background="@drawable/right_hand_base"
+                            android:backgroundTint="@color/control_color"
                             android:onClick="fingerExceptionClick" />
                     </RelativeLayout>
                 </LinearLayout>
@@ -442,27 +441,27 @@
                 android:onClick="irisButtonClick"
                 app:icon="@drawable/outline_remove_red_eye_white_24" />
 
-        <Button
-            android:id="@+id/btnFingerScanSelection"
-            android:layout_width="38dp"
-            android:layout_height="48dp"
-            android:paddingLeft="8dp"
-            android:layout_marginLeft="16dp"
-            android:backgroundTint="@color/control_color"
-            app:cornerRadius="48dp"
-            android:onClick="fingerButtonClick"
-            app:icon="@drawable/fingerprint"  />
+            <Button
+                android:id="@+id/btnFingerScanSelection"
+                android:layout_width="38dp"
+                android:layout_height="48dp"
+                android:paddingLeft="8dp"
+                android:layout_marginLeft="16dp"
+                android:backgroundTint="@color/control_color"
+                app:cornerRadius="48dp"
+                android:onClick="fingerButtonClick"
+                app:icon="@drawable/fingerprint"  />
 
-        <Button
-            android:id="@+id/btnFaceScanSelection"
-            android:layout_width="38dp"
-            android:layout_height="48dp"
-            android:paddingLeft="7dp"
-            android:layout_marginLeft="16dp"
-            android:backgroundTint="@color/control_color"
-            app:cornerRadius="48dp"
-            android:onClick="facePhotoButtonClick"
-            app:icon="@drawable/outline_portrait_24" />
+            <Button
+                android:id="@+id/btnFaceScanSelection"
+                android:layout_width="38dp"
+                android:layout_height="48dp"
+                android:paddingLeft="7dp"
+                android:layout_marginLeft="16dp"
+                android:backgroundTint="@color/control_color"
+                app:cornerRadius="48dp"
+                android:onClick="facePhotoButtonClick"
+                app:icon="@drawable/outline_portrait_24" />
             <Button
                 android:id="@+id/btnException"
                 android:layout_width="38dp"
@@ -476,13 +475,13 @@
                 app:icon="@drawable/outline_portrait_24" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            >
 
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
