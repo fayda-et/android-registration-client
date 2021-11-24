@@ -90,14 +90,14 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pnlIrisModality"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="visible">
                     <ImageView
                         android:id="@+id/irisLeft"
-                        android:layout_width="173dp"
-                        android:layout_height="173dp"
+                        android:layout_width="172dp"
+                        android:layout_height="172dp"
                         android:onClick="irisExceptionImageClick"
                         android:background="@drawable/iris"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginLeft="24dp"
                         android:layout_gravity="center"
                         />
                     <View
@@ -107,11 +107,11 @@
                         />
                     <ImageView
                         android:id="@+id/irisRight"
-                        android:layout_width="173dp"
-                        android:layout_height="173dp"
+                        android:layout_width="172dp"
+                        android:layout_height="172dp"
                         android:onClick="irisExceptionImageClick"
-                        android:background="@drawable/iris_exception"
-                        android:layout_marginRight="16dp"
+                        android:background="@drawable/iris"
+                        android:layout_marginRight="24dp"
                         android:layout_gravity="center"
                         />
 
@@ -123,7 +123,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pnlLeftFourFingers"
                     android:orientation="vertical"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     >
 
                     <RelativeLayout

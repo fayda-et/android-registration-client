@@ -136,19 +136,23 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
     public void irisExceptionImageClick(View view){
         if(view.getId()==R.id.irisLeft){
             if(biometricExceptions.contains(Constants.LEFT_IRIS_SUB_TYPE)){
-                view.setBackground(getResources().getDrawable(R.drawable.iris));
+//                view.setBackground(getResources().getDrawable(R.drawable.iris));
+                view.setAlpha(1);
                 biometricExceptions.remove(Constants.LEFT_IRIS_SUB_TYPE);
             }else{
-                view.setBackground(getResources().getDrawable(R.drawable.iris_exception));
+//                view.setBackground(getResources().getDrawable(R.drawable.iris_exception));
+                view.setAlpha(0.05F);
                 biometricExceptions.add(Constants.LEFT_IRIS_SUB_TYPE);
             }
         }
         else if(view.getId()==R.id.irisRight){
             if(biometricExceptions.contains(Constants.RIGHT_IRIS_SUB_TYPE)){
-                view.setBackground(getResources().getDrawable(R.drawable.iris));
+//                view.setBackground(getResources().getDrawable(R.drawable.iris));
+                view.setAlpha(1);
                 biometricExceptions.remove(Constants.RIGHT_IRIS_SUB_TYPE);
             }else{
-                view.setBackground(getResources().getDrawable(R.drawable.iris_exception));
+//                view.setBackground(getResources().getDrawable(R.drawable.iris_exception));
+                view.setAlpha(0.05F);
                 biometricExceptions.add(Constants.RIGHT_IRIS_SUB_TYPE);
             }
         }
@@ -187,7 +191,7 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         }
         else{
             biometricExceptions.add(finger);
-            imageView.setAlpha(.25F);
+            imageView.setAlpha(.05F);
         }
 
     }
