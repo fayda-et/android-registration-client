@@ -17,20 +17,48 @@
         app:layout_constraintTop_toTopOf="parent">
     </LinearLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pnlMainScreenPanel"
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:id="@+id/pnlMainScreenPanel"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="38dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/languageSelectionPanel"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<!--        android:background="@color/backgroundColor"-->
+<!--        android:orientation="vertical"-->
+<!--        >-->
+<!--    </androidx.viewpager2.widget.ViewPager2>-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/languageSelectionPanel"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="@color/backgroundColor"
+        android:orientation="vertical"
+        tools:background="#FFFFFF"
+            android:layout_marginTop="38dp"
+            app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
         >
-    </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable"
+            />
+        <androidx.viewpager.widget.ViewPager
+
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BiometricRegistrationController">
+    tools:context=".BiometricRegistrationController" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
     <LinearLayout
         android:id="@+id/pnlTopMainPanel"
@@ -411,7 +416,7 @@
 
                     android:layout_marginHorizontal="8dp"
                     app:cornerRadius="45dp"
-                    android:onClick="prevButtonClick"
+
                     android:text="@string/previous" />
 
                 <Button
@@ -420,7 +425,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:cornerRadius="45dp"
-                    android:onClick="nextButtonClick"
+
                     android:layout_marginHorizontal="8dp"
                     android:text="@string/next" />
             </LinearLayout>
@@ -459,14 +464,14 @@
             android:layout_weight="1"
             >
             <Button
-                android:id="@+id/ptnIrisScanSelection"
+                android:id="@+id/btnIrisScanSelection"
                 android:layout_width="38dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
                 android:paddingLeft="8dp"
                 android:backgroundTint="@color/control_color"
                 app:cornerRadius="48dp"
-                android:onClick="irisButtonClick"
+
                 app:icon="@drawable/outline_remove_red_eye_white_24" />
 
             <Button
@@ -499,7 +504,7 @@
                 android:visibility="visible"
                 android:layout_marginLeft="16dp"
                 app:cornerRadius="48dp"
-                android:onClick="exceptionPhotoButtonClick"
+
                 app:icon="@drawable/outline_portrait_24" />
         </LinearLayout>
 
@@ -513,3 +518,4 @@
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

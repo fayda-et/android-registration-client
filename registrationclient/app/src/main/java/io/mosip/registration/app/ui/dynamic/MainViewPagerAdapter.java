@@ -7,7 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class MainPagerAdapter extends PagerAdapter
+public class MainViewPagerAdapter extends PagerAdapter
 {
     // This holds all the currently displayable views, in order from left to right.
     private ArrayList<View> views = new ArrayList<View>();

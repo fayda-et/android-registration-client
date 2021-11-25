@@ -1,31 +1,27 @@
 package io.mosip.registration.app;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.ArrayMap;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
-import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
-import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
+import io.mosip.registration.app.ui.dynamic.MainViewPagerAdapter;
+import io.mosip.registration.app.ui.dynamic.views.MainFragmentPagerAdapter;
 
 public class NewRegistrationController extends AppCompatActivity {
 
@@ -35,13 +31,10 @@ public class NewRegistrationController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.new_registration_controller);
-
-        pnlMainScreen = findViewById(R.id.pnlMainScreenPanel);
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
-        pnlMainScreen.setAdapter(mainPagerAdapter);
         loadUI();
     }
 
@@ -75,25 +68,17 @@ public class NewRegistrationController extends AppCompatActivity {
 
 
     public void nextScreenClick(View view){
-//        String allData=getDemographicDataJSON();
-//
-//        System.out.println("The Data is");
-//        System.out.println(allData);
-//        System.out.println("OVER");
+
         int index = pnlMainScreen.getCurrentItem();
         index=index+1;
-        if(((MainPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
+        if(((MainViewPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
             pnlMainScreen.getAdapter().notifyDataSetChanged();
             pnlMainScreen.setCurrentItem(index);
         }
     }
 
     public void prevScreenClick(View view){
-//        String allData=getDemographicDataJSON();
-//
-//        System.out.println("The Data is");
-//        System.out.println(allData);
-//        System.out.println("OVER");
+
 
         int index = pnlMainScreen.getCurrentItem();
         index=index-1;
@@ -107,14 +92,19 @@ public class NewRegistrationController extends AppCompatActivity {
     private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
     private void loadUI() {
 
-        DemographicRegistrationController domo = new DemographicRegistrationController(getApplicationContext());
+        BiometricRegistrationController biom=new BiometricRegistrationController();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container_view, biom, null)
+                .setReorderingAllowed(true)
+                .commit();
 
-
-        ((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(domo);
-        //((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(biom);
-        pnlMainScreen.getAdapter().notifyDataSetChanged();
-        pnlMainScreen.setCurrentItem(0);
     }
+
+
+
+
+
+
 
 
 }

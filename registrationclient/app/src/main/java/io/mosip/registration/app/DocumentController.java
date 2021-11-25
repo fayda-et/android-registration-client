@@ -2,7 +2,6 @@ package io.mosip.registration.app;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,12 +9,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.provider.Settings;
-import android.util.ArrayMap;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.scanlibrary.ScanActivity;
 import com.scanlibrary.ScanConstants;
@@ -27,14 +22,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import io.mosip.registration.app.R;
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
-import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
 
 public class DocumentController extends AppCompatActivity {
 
