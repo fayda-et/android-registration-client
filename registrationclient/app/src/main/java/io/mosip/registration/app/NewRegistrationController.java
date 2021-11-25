@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -30,11 +31,10 @@ public class NewRegistrationController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.new_registration_controller);
-
-
         loadUI();
     }
 
@@ -92,20 +92,11 @@ public class NewRegistrationController extends AppCompatActivity {
     private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
     private void loadUI() {
 
-        List<Fragment> fragments = new Vector<Fragment>();
-
-        Bundle page = new Bundle();
-        page.putString("url", "url");
-
-        fragments.add(Fragment.instantiate(this,DemographicRegistrationController.class.getName(),page));
-        fragments.add(Fragment.instantiate(this,BiometricRegistrationController.class.getName(),page));
-
-
-        MainFragmentPagerAdapter mPagerAdapter  = new MainFragmentPagerAdapter(super.getSupportFragmentManager(), fragments);
-
-        pnlMainScreen = findViewById(R.id.view_pager);
-
-        pnlMainScreen.setAdapter(mPagerAdapter);
+        BiometricRegistrationController biom=new BiometricRegistrationController();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container_view, biom, null)
+                .setReorderingAllowed(true)
+                .commit();
 
     }
 

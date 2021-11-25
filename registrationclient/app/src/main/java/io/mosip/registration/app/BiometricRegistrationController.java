@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,36 +35,38 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.biometric_registration_controller);
-//        modalityPanel = findViewById(R.id.pnlCurrentModalityViewArea);
-//        currentModalityLable =findViewById(R.id.lblCurrentModality);
-//        findViewById(R.id.btnException).setVisibility(View.GONE);
-
-    }
-
-    private void init(){
-        //inflate(context, layoutId, this);
-      //  setContentView(R.layout.biometric_registration_controller);
-//        getFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.view_pager, this)
-//                .commit();
-        modalityPanel = theView.findViewById(R.id.pnlCurrentModalityViewArea);
-        currentModalityLable =theView.findViewById(R.id.lblCurrentModality);
-        theView.findViewById(R.id.btnException).setVisibility(View.GONE);
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         theView= inflater.inflate(R.layout.biometric_registration_controller, container, false);
         init();
         return theView;
     }
+    public BiometricRegistrationController()
+    {
+        super(R.layout.biometric_registration_controller);
+
+    }
+
+    private void init(){
+        modalityPanel = theView.findViewById(R.id.pnlCurrentModalityViewArea);
+        currentModalityLable =theView.findViewById(R.id.lblCurrentModality);
+        theView.findViewById(R.id.btnException).setVisibility(View.GONE);
+        setEventListener();
+    }
+    private void setEventListener(){
+        theView.findViewById(R.id.btnNextModality).setOnClickListener(v -> nextButtonClick(v));
+        theView.findViewById(R.id.btnPreviousModality).setOnClickListener(v -> prevButtonClick(v));
+
+        theView.findViewById(R.id.btnIrisScanSelection).setOnClickListener(v -> irisButtonClick(v));
+        theView.findViewById(R.id.btnFaceScanSelection).setOnClickListener(v -> facePhotoButtonClick(v));
+        theView.findViewById(R.id.btnFingerScanSelection).setOnClickListener(v -> fingerButtonClick(v));
+        theView.findViewById(R.id.btnException).setOnClickListener(v -> exceptionPhotoButtonClick(v));
+
+    }
+
 
     private void setCurrentModalityIris(){
         for(int i=1;i<5;i++){
