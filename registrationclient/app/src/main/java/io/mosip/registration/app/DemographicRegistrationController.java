@@ -62,6 +62,10 @@ public class DemographicRegistrationController extends Fragment {
         // Inflate the layout for this fragment
 
         theView= inflater.inflate(R.layout.demographic_registration_controller, container, false);
+//        getFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.view_pager, this)
+//                .commit();
         init();
         return theView;
     }

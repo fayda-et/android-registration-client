@@ -44,7 +44,10 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
     private void init(){
         //inflate(context, layoutId, this);
       //  setContentView(R.layout.biometric_registration_controller);
-
+//        getFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.view_pager, this)
+//                .commit();
         modalityPanel = theView.findViewById(R.id.pnlCurrentModalityViewArea);
         currentModalityLable =theView.findViewById(R.id.lblCurrentModality);
         theView.findViewById(R.id.btnException).setVisibility(View.GONE);

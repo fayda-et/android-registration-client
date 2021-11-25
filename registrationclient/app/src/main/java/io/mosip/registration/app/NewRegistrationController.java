@@ -68,11 +68,7 @@ public class NewRegistrationController extends AppCompatActivity {
 
 
     public void nextScreenClick(View view){
-//        String allData=getDemographicDataJSON();
-//
-//        System.out.println("The Data is");
-//        System.out.println(allData);
-//        System.out.println("OVER");
+
         int index = pnlMainScreen.getCurrentItem();
         index=index+1;
         if(((MainViewPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
@@ -82,11 +78,7 @@ public class NewRegistrationController extends AppCompatActivity {
     }
 
     public void prevScreenClick(View view){
-//        String allData=getDemographicDataJSON();
-//
-//        System.out.println("The Data is");
-//        System.out.println(allData);
-//        System.out.println("OVER");
+
 
         int index = pnlMainScreen.getCurrentItem();
         index=index-1;
@@ -102,14 +94,12 @@ public class NewRegistrationController extends AppCompatActivity {
 
         List<Fragment> fragments = new Vector<Fragment>();
 
-//for each fragment you want to add to the pager
         Bundle page = new Bundle();
         page.putString("url", "url");
 
         fragments.add(Fragment.instantiate(this,DemographicRegistrationController.class.getName(),page));
         fragments.add(Fragment.instantiate(this,BiometricRegistrationController.class.getName(),page));
 
-//after adding all the fragments write the below lines
 
         MainFragmentPagerAdapter mPagerAdapter  = new MainFragmentPagerAdapter(super.getSupportFragmentManager(), fragments);
 
