@@ -19,7 +19,7 @@
             android:name=".DocumentController"
             android:exported="false" />
         <activity
-            android:name=".BiometricRegistrationController"
+            android:name=".NewRegistrationController"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

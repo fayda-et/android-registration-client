@@ -1,7 +1,5 @@
 package io.mosip.registration.app;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -13,10 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,7 +25,7 @@ import java.util.Map;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
-import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
+import io.mosip.registration.app.ui.dynamic.MainViewPagerAdapter;
 
 public class DemographicRegistrationController extends Fragment {
 
@@ -78,8 +72,8 @@ public class DemographicRegistrationController extends Fragment {
         pnlPrimary = theView.findViewById(R.id.pnlPrimaryLanguagePanel);
         //TabLayout tabLayout
         pnlSecondary = theView.findViewById(R.id.pnlSecondaryLanguagePanel);
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
-        pnlSecondary.setAdapter(mainPagerAdapter);
+        MainViewPagerAdapter mainViewPagerAdapter = new MainViewPagerAdapter();
+        pnlSecondary.setAdapter(mainViewPagerAdapter);
         loadUI();
     }
     public Context getApplicationContext(){return theView.getContext();}
@@ -243,7 +237,7 @@ public class DemographicRegistrationController extends Fragment {
 
             //Populate secondary languages ui
             for(int i=0;i<secondaryLanguages.size();i++){
-                ((MainPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i));
+                ((MainViewPagerAdapter)pnlSecondary.getAdapter()).addView(secondaryLanguages.get(i));
                 pnlSecondary.getAdapter().notifyDataSetChanged();
             }
 

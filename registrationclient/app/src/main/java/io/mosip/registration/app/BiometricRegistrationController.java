@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.ImageViewCompat;
+import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -19,20 +22,44 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BiometricRegistrationController extends AppCompatActivity {
+import io.mosip.registration.app.ui.dynamic.MainViewPagerAdapter;
+
+public class BiometricRegistrationController extends Fragment {
 private int currentModalityIndex=1;
 private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","Two Thumb Fingers","Face","Exception Photo"};
     ViewGroup modalityPanel=null;
+    View theView=null;
     TextView currentModalityLable=null;
     int maxModality=5;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.biometric_registration_controller);
-        modalityPanel = findViewById(R.id.pnlCurrentModalityViewArea);
-        currentModalityLable =findViewById(R.id.lblCurrentModality);
-        findViewById(R.id.btnException).setVisibility(View.GONE);
+//        setContentView(R.layout.biometric_registration_controller);
+//        modalityPanel = findViewById(R.id.pnlCurrentModalityViewArea);
+//        currentModalityLable =findViewById(R.id.lblCurrentModality);
+//        findViewById(R.id.btnException).setVisibility(View.GONE);
 
+    }
+
+    private void init(){
+        //inflate(context, layoutId, this);
+      //  setContentView(R.layout.biometric_registration_controller);
+
+        modalityPanel = theView.findViewById(R.id.pnlCurrentModalityViewArea);
+        currentModalityLable =theView.findViewById(R.id.lblCurrentModality);
+        theView.findViewById(R.id.btnException).setVisibility(View.GONE);
+
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        theView= inflater.inflate(R.layout.biometric_registration_controller, container, false);
+        init();
+        return theView;
     }
 
     private void setCurrentModalityIris(){
@@ -152,7 +179,7 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
                 biometricExceptions.add(Constants.RIGHT_IRIS_SUB_TYPE);
             }
         }
-        View excepButton= findViewById(R.id.btnException);
+        View excepButton= theView.findViewById(R.id.btnException);
         if(biometricExceptions.size()==0){
             maxModality=5;
             excepButton.setVisibility(View.GONE);

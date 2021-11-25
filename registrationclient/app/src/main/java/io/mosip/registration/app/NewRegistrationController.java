@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import org.json.JSONObject;
@@ -16,9 +16,11 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
-import io.mosip.registration.app.ui.dynamic.MainPagerAdapter;
+import io.mosip.registration.app.ui.dynamic.MainViewPagerAdapter;
+import io.mosip.registration.app.ui.dynamic.views.MainFragmentPagerAdapter;
 
 public class NewRegistrationController extends AppCompatActivity {
 
@@ -32,9 +34,7 @@ public class NewRegistrationController extends AppCompatActivity {
 
         setContentView(R.layout.new_registration_controller);
 
-        pnlMainScreen = findViewById(R.id.pnlMainScreenPanel);
-        MainPagerAdapter mainPagerAdapter = new MainPagerAdapter();
-        pnlMainScreen.setAdapter(mainPagerAdapter);
+
         loadUI();
     }
 
@@ -75,7 +75,7 @@ public class NewRegistrationController extends AppCompatActivity {
 //        System.out.println("OVER");
         int index = pnlMainScreen.getCurrentItem();
         index=index+1;
-        if(((MainPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
+        if(((MainViewPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
             pnlMainScreen.getAdapter().notifyDataSetChanged();
             pnlMainScreen.setCurrentItem(index);
         }
@@ -100,56 +100,26 @@ public class NewRegistrationController extends AppCompatActivity {
     private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
     private void loadUI() {
 
-        DemographicRegistrationController domo = new DemographicRegistrationController();
+        List<Fragment> fragments = new Vector<Fragment>();
 
+//for each fragment you want to add to the pager
+        Bundle page = new Bundle();
+        page.putString("url", "url");
 
-        ((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(domo);
-        //((MainPagerAdapter)pnlMainScreen.getAdapter()).addView(biom);
-        pnlMainScreen.getAdapter().notifyDataSetChanged();
-        pnlMainScreen.setCurrentItem(0);
-    }
+        fragments.add(Fragment.instantiate(this,DemographicRegistrationController.class.getName(),page));
+        fragments.add(Fragment.instantiate(this,BiometricRegistrationController.class.getName(),page));
 
+//after adding all the fragments write the below lines
 
+        MainFragmentPagerAdapter mPagerAdapter  = new MainFragmentPagerAdapter(super.getSupportFragmentManager(), fragments);
 
-    // ...
-    private ViewPager2Adapter adapterViewPager;
+        pnlMainScreen = findViewById(R.id.view_pager);
 
-    // Extend from SmartFragmentStatePagerAdapter now instead for more dynamic ViewPager items
-    public static class MyPagerAdapter extends ViewPager2Adapter {
-        private static int NUM_ITEMS = 3;
-
-        public MyPagerAdapter(FragmentManager fragmentManager) {
-            super(fragmentManager);
-        }
-
-        // Returns total number of pages
-        @Override
-        public int getCount() {
-            return NUM_ITEMS;
-        }
-
-        // Returns the fragment to display for that page
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0: // Fragment # 0 - This will show FirstFragment
-                    return FirstFragment.newInstance(0, "Page # 1");
-                case 1: // Fragment # 0 - This will show FirstFragment different title
-                    return FirstFragment.newInstance(1, "Page # 2");
-                case 2: // Fragment # 1 - This will show SecondFragment
-                    return SecondFragment.newInstance(2, "Page # 3");
-                default:
-                    return null;
-            }
-        }
-
-        // Returns the page title for the top indicator
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + position;
-        }
+        pnlMainScreen.setAdapter(mPagerAdapter);
 
     }
+
+
 
 
 
