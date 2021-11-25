@@ -13,6 +13,7 @@ public class Constants
     public static String RIGHT_MIDDLE_FINGER="rightMiddle";
     public static String RIGHT_RING_FINGER="rightRing";
     public static String RIGHT_LITTLE_FINGER="rightLittle";
-
+    public static String RIGHT_THUMB_FINGER="rightThumb";
+    public static String LEFT_THUMB_FINGER="rightThumb";
     public static String IRIS="IRIS";
 }

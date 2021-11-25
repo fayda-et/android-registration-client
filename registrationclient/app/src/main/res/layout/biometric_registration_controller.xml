@@ -90,7 +90,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/pnlIrisModality"
                     android:orientation="horizontal"
-                    android:visibility="visible">
+                    android:visibility="gone">
                     <ImageView
                         android:id="@+id/irisLeft"
                         android:layout_width="172dp"
@@ -283,37 +283,72 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:id="@+id/pnlTwoThumbsFinger"
                     android:orientation="vertical"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     >
+                    <LinearLayout
+                        android:id="@+id/thumbsGroupPanel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
                     <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         >
 
                         <ImageView
-                            android:id="@+id/twoThumbs"
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/leftThumb"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
                             android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/right_hand" />
+                            android:layout_marginTop="90dp"
+                            android:background="@drawable/left_thumb_base" />
 
                         <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="20dp"
+                            android:id="@+id/leftThumbFinger"
+                            android:layout_width="32.5dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_marginTop="45dp"
+                            android:background="@drawable/left_thumb_finger"
+                            android:onClick="fingerExceptionClick" />
 
-                            android:background="@drawable/circle_button">
-
-
-                        </ImageView>
                     </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
 
+                        <ImageView
+                            android:id="@+id/rightThumb"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+
+
+                            android:layout_marginTop="90dp"
+                            android:background="@drawable/right_thumb_base" />
+                        <ImageView
+                            android:id="@+id/rightThumbFinger"
+
+                            android:layout_width="32.5dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="2.5dp"
+                            android:layout_marginTop="45dp"
+                            android:onClick="fingerExceptionClick"
+                            android:background="@drawable/right_thumb_finger" />
+
+                        <ProgressBar
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="-4dp"
+                            android:layout_marginTop="30dp"
+
+                            android:rotationX="50" />
+                    </RelativeLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 

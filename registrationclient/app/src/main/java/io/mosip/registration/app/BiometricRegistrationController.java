@@ -184,6 +184,8 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
             case R.id.rightRingFinger:finger=Constants.RIGHT_RING_FINGER;break;
             case R.id.rightMiddleFinger:finger=Constants.RIGHT_MIDDLE_FINGER;break;
             case R.id.rightIndexFinger:finger=Constants.RIGHT_INDEX_FINGER;break;
+            case R.id.rightThumbFinger:finger=Constants.RIGHT_THUMB_FINGER;break;
+            case R.id.leftThumbFinger:finger=Constants.LEFT_THUMB_FINGER;break;
         }
         if(biometricExceptions.contains(finger)){
             biometricExceptions.remove(finger);
