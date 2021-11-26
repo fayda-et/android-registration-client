@@ -100,7 +100,7 @@
                         android:id="@+id/irisLeft"
                         android:layout_width="172dp"
                         android:layout_height="172dp"
-                        android:onClick="irisExceptionImageClick"
+
                         android:background="@drawable/iris"
                         android:layout_marginLeft="24dp"
                         android:layout_gravity="center"
@@ -114,7 +114,7 @@
                         android:id="@+id/irisRight"
                         android:layout_width="172dp"
                         android:layout_height="172dp"
-                        android:onClick="irisExceptionImageClick"
+
                         android:background="@drawable/iris"
                         android:layout_marginRight="24dp"
                         android:layout_gravity="center"
@@ -146,7 +146,7 @@
                             android:adjustViewBounds="true"
                             android:background="@drawable/left_little_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
 
                         <ImageView
@@ -159,7 +159,7 @@
                             android:alpha="1"
                             android:background="@drawable/left_ring_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
                         <ImageView
                             android:id="@+id/leftMiddleFinger"
@@ -171,7 +171,7 @@
                             android:alpha="1"
                             android:background="@drawable/left_middle_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                           />
 
                         <ImageView
                             android:id="@+id/leftIndexFinger"
@@ -183,7 +183,7 @@
                             android:alpha="1"
                             android:background="@drawable/left_index_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
                         <ImageView
                             android:id="@+id/leftHand"
@@ -194,17 +194,10 @@
                             android:alpha="1"
                             android:background="@drawable/left_hand_base"
                             android:backgroundTint="@color/black"
-                            android:onClick="fingerExceptionClick" />
+                           />
 
                     </RelativeLayout>
                 </LinearLayout>
-
-
-
-
-
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -231,7 +224,7 @@
                             android:alpha="1"
                             android:background="@drawable/right_index_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                          />
 
                         <ImageView
                             android:id="@+id/rightMiddleFinger"
@@ -243,7 +236,7 @@
                             android:alpha="1"
                             android:background="@drawable/right_middle_finge"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                           />
 
                         <ImageView
                             android:id="@+id/rightRingFinger"
@@ -255,7 +248,7 @@
                             android:alpha="1"
                             android:background="@drawable/right_ringer_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
                         <ImageView
                             android:id="@+id/rightLittleFinger"
@@ -268,7 +261,7 @@
                             android:backgroundTint="@color/black"
                             android:background="@drawable/right_little_finger"
                             android:backgroundTintMode="src_atop"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
                         <ImageView
                             android:id="@+id/right"
@@ -281,7 +274,7 @@
                             android:alpha="1"
                             android:background="@drawable/right_hand_base"
                             android:backgroundTint="@color/black"
-                            android:onClick="fingerExceptionClick" />
+                           />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -319,7 +312,7 @@
                             android:layout_marginLeft="45dp"
                             android:layout_marginTop="45dp"
                             android:background="@drawable/left_thumb_finger"
-                            android:onClick="fingerExceptionClick" />
+                            />
 
                     </RelativeLayout>
                     <RelativeLayout
@@ -342,22 +335,13 @@
                             android:layout_height="50dp"
                             android:layout_marginLeft="2.5dp"
                             android:layout_marginTop="45dp"
-                            android:onClick="fingerExceptionClick"
+
                             android:background="@drawable/right_thumb_finger" />
 
                     </RelativeLayout>
                     </LinearLayout>
 
                 </LinearLayout>
-
-
-
-
-
-
-
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -471,7 +455,6 @@
                 android:paddingLeft="8dp"
                 android:backgroundTint="@color/control_color"
                 app:cornerRadius="48dp"
-
                 app:icon="@drawable/outline_remove_red_eye_white_24" />
 
             <Button
@@ -482,7 +465,7 @@
                 android:layout_marginLeft="16dp"
                 android:backgroundTint="@color/control_color"
                 app:cornerRadius="48dp"
-                android:onClick="fingerButtonClick"
+
                 app:icon="@drawable/fingerprint"  />
 
             <Button
@@ -493,7 +476,7 @@
                 android:layout_marginLeft="16dp"
                 android:backgroundTint="@color/control_color"
                 app:cornerRadius="48dp"
-                android:onClick="facePhotoButtonClick"
+
                 app:icon="@drawable/outline_portrait_24" />
             <Button
                 android:id="@+id/btnException"

@@ -38,11 +38,10 @@
 
 </LinearLayout>
 <ScrollView
+    android:layout_marginTop="38dp"
 android:id="@+id/scrollView2"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:layout_marginBottom="48dp"
-
 android:background="@color/backgroundColor"
 >
 
@@ -67,8 +66,6 @@ android:background="@color/backgroundColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
-
-
         </LinearLayout>
 
     </LinearLayout>
@@ -78,8 +75,6 @@ android:background="@color/backgroundColor"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:background="@color/secondaryColor" />
-
-
     <androidx.viewpager.widget.ViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pnlSecondaryLanguagePanel"

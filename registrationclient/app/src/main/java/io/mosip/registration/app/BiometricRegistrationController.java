@@ -54,6 +54,7 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         modalityPanel = theView.findViewById(R.id.pnlCurrentModalityViewArea);
         currentModalityLable =theView.findViewById(R.id.lblCurrentModality);
         theView.findViewById(R.id.btnException).setVisibility(View.GONE);
+        setCurrentModalityIris();
         setEventListener();
     }
     private void setEventListener(){
@@ -64,6 +65,22 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         theView.findViewById(R.id.btnFaceScanSelection).setOnClickListener(v -> facePhotoButtonClick(v));
         theView.findViewById(R.id.btnFingerScanSelection).setOnClickListener(v -> fingerButtonClick(v));
         theView.findViewById(R.id.btnException).setOnClickListener(v -> exceptionPhotoButtonClick(v));
+
+        theView.findViewById(R.id.irisLeft).setOnClickListener(v -> irisExceptionImageClick(v));
+        theView.findViewById(R.id.irisRight).setOnClickListener(v -> irisExceptionImageClick(v));
+
+        theView.findViewById(R.id.leftIndexFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.leftMiddleFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.leftRingFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.leftLittleFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.leftThumbFinger).setOnClickListener(v -> fingerExceptionClick(v));
+
+        theView.findViewById(R.id.rightIndexFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.rightMiddleFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.rightRingFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.rightLittleFinger).setOnClickListener(v -> fingerExceptionClick(v));
+        theView.findViewById(R.id.rightThumbFinger).setOnClickListener(v -> fingerExceptionClick(v));
+
 
     }
 
@@ -227,6 +244,17 @@ private String modalityList[]={"Iris","Left Four Fingers","Right Four Fingers","
         else{
             biometricExceptions.add(finger);
             imageView.setAlpha(.05F);
+        }
+
+
+        View excepButton= theView.findViewById(R.id.btnException);
+        if(biometricExceptions.size()==0){
+            maxModality=5;
+            excepButton.setVisibility(View.GONE);
+        }
+        else{
+            maxModality=6;
+            excepButton.setVisibility(View.VISIBLE);
         }
 
     }

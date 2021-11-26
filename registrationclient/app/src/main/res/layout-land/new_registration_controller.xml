@@ -6,16 +6,7 @@
     android:layout_height="match_parent"
     android:background="#871959"
     tools:context=".NewRegistrationController">
-    <LinearLayout
-        android:id="@+id/languageSelectionPanel"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:orientation="horizontal"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </LinearLayout>
+
 
     <!--    <androidx.viewpager2.widget.ViewPager2-->
     <!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
@@ -32,16 +23,18 @@
     <!--        android:orientation="vertical"-->
     <!--        >-->
     <!--    </androidx.viewpager2.widget.ViewPager2>-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        tools:background="#FFFFFF"-->
-<!--        android:layout_marginTop="38dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        >-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:background="#FFFFFF"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/pnlBottomCommands"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
 
 <!--        <com.google.android.material.tabs.TabLayout-->
 <!--            android:id="@+id/tabs"-->
@@ -53,18 +46,15 @@
 
 <!--            android:id="@+id/fragment_container_view"-->
 <!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
+<!--            android:layout_height="match_parent"-->
 <!--            android:layout_weight="1"-->
 <!--            />-->
-<!--    </LinearLayout>-->
 
-
-    <androidx.fragment.app.FragmentContainerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/fragment_container_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -74,19 +64,18 @@
         android:background="@color/backgroundColor"
         app:layout_constraintBottom_toBottomOf="parent">
         <Button
-            android:id="@+id/reset"
+            android:id="@+id/btnScreenBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:onClick="prevScreenClick"
             android:text="@string/back"
-
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnNext"
+            app:layout_constraintEnd_toStartOf="@+id/btnScreenNext"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnNext"
+            android:id="@+id/btnScreenNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next"

@@ -6,8 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.PagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import org.json.JSONObject;
@@ -17,11 +16,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
-import io.mosip.registration.app.ui.dynamic.MainViewPagerAdapter;
-import io.mosip.registration.app.ui.dynamic.views.MainFragmentPagerAdapter;
 
 public class NewRegistrationController extends AppCompatActivity {
 
@@ -69,34 +65,69 @@ public class NewRegistrationController extends AppCompatActivity {
 
     public void nextScreenClick(View view){
 
-        int index = pnlMainScreen.getCurrentItem();
-        index=index+1;
-        if(((MainViewPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
-            pnlMainScreen.getAdapter().notifyDataSetChanged();
-            pnlMainScreen.setCurrentItem(index);
+//        int index = pnlMainScreen.getCurrentItem();
+//        index=index+1;
+//        if(((MainViewPagerAdapter)pnlMainScreen.getAdapter()).getCount()>index) {
+//            pnlMainScreen.getAdapter().notifyDataSetChanged();
+//            pnlMainScreen.setCurrentItem(index);
+//        }
+
+        if(currentScreenIndex<1) {
+            currentScreenIndex++;
+
+            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+                    .hide(loadedScreens.get(currentScreenIndex-1))
+                    .show(loadedScreens.get(currentScreenIndex))
+                    .commit();
         }
     }
 
     public void prevScreenClick(View view){
 
 
-        int index = pnlMainScreen.getCurrentItem();
-        index=index-1;
-        if(index>=0) {
-            pnlMainScreen.getAdapter().notifyDataSetChanged();
-            pnlMainScreen.setCurrentItem(index,true);
+//        int index = pnlMainScreen.getCurrentItem();
+//        index=index-1;
+//        if(index>=0) {
+//            pnlMainScreen.getAdapter().notifyDataSetChanged();
+//            pnlMainScreen.setCurrentItem(index,true);
+//        }
+
+
+
+        if(currentScreenIndex>0) {
+            currentScreenIndex--;
+            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            .hide(loadedScreens.get(currentScreenIndex+1))
+            .show(loadedScreens.get(currentScreenIndex))
+                    .commit();
         }
     }
 
+    private int currentScreenIndex=0;
+
     private List<DynamicComponent> loadedFields = new ArrayList<>();
     private Map<String,List<JSONObject>> groupedFields = new ArrayMap<>();
+
+    private List<Fragment> loadedScreens = new ArrayList<>();
+    FragmentTransaction fragmentTransaction =null;
     private void loadUI() {
 
         BiometricRegistrationController biom=new BiometricRegistrationController();
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container_view, biom, null)
+        DemographicRegistrationController demo=new DemographicRegistrationController();
+        loadedScreens.add(demo);
+        loadedScreens.add(biom);
+
+
+         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.setReorderingAllowed(true)
+                .add(R.id.fragment_container_view, demo, null);
+
+
+                fragmentTransaction.add(R.id.fragment_container_view, biom, null)
                 .setReorderingAllowed(true)
-                .commit();
+                        .commit();
+
+        fragmentTransaction.hide(biom);
 
     }
 
