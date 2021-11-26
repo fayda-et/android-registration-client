@@ -75,7 +75,9 @@ public class NewRegistrationController extends AppCompatActivity {
         if(currentScreenIndex<1) {
             currentScreenIndex++;
 
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.fade_in,
+                    android.R.anim.fade_out
+                    )
                     .hide(loadedScreens.get(currentScreenIndex-1))
                     .show(loadedScreens.get(currentScreenIndex))
                     .commit();
@@ -96,7 +98,7 @@ public class NewRegistrationController extends AppCompatActivity {
 
         if(currentScreenIndex>0) {
             currentScreenIndex--;
-            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            getSupportFragmentManager().beginTransaction().setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
             .hide(loadedScreens.get(currentScreenIndex+1))
             .show(loadedScreens.get(currentScreenIndex))
                     .commit();
