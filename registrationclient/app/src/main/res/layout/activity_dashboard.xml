@@ -5,7 +5,6 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".ui.home.Dashboard"
     tools:openDrawer="start">
 
@@ -22,10 +21,6 @@
         android:layout_height="wrap_content"
         android:background="@color/homepage_bg_color"
         >
-
-
-
-
         <include
             android:id="@+id/include"
             layout="@layout/toolbar"
@@ -33,9 +28,6 @@
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_baseline_menu"
             />
-
-
-
 
 
 
@@ -165,7 +157,6 @@
 
 
                         </LinearLayout>
-
 
 
                     </LinearLayout>

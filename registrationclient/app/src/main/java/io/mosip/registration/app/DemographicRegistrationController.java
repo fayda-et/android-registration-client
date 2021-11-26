@@ -33,14 +33,6 @@ public class DemographicRegistrationController extends Fragment {
     View theView =null;
     ViewGroup pnlPrimary = null;
     ViewPager pnlSecondary = null;
-    //Context context=null;
-//    public DemographicRegistrationController(Context context)
-//    {
-//       // super(context);
-//       // this.context=context;
-//        init();
-//    }
-
 
     public DemographicRegistrationController()
     {

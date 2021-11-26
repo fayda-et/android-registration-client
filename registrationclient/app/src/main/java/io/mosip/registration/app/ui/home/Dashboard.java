@@ -1,6 +1,7 @@
 package io.mosip.registration.app.ui.home;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import io.mosip.registration.app.NewRegistrationController;
 import io.mosip.registration.app.R;
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,7 +38,6 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.include);
-        setSupportActionBar(toolbar);
 
 
         navigationView.bringToFront();
@@ -44,6 +45,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportActionBar().hide();
 
     }
 
@@ -83,4 +86,10 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         });
         dialog.show();
     }
+    public void newRegistrationProcess(View view) {
+        view.getRootView().setVisibility(View.GONE);
+        Intent intent = new Intent(Dashboard.this, NewRegistrationController.class);
+        startActivity(intent);
+    }
+
 }

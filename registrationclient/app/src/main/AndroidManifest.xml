@@ -16,16 +16,22 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".DocumentController"
+            android:name=".NewRegistrationController"
             android:exported="false" />
         <activity
-            android:name=".NewRegistrationController"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".ui.home.Dashboard"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".DocumentController"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ui.home.Dashboard"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"

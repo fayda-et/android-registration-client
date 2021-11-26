@@ -2,13 +2,16 @@ package io.mosip.registration.app;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -27,23 +30,41 @@ import java.util.List;
 import io.mosip.registration.app.ui.dynamic.DynamicComponent;
 import io.mosip.registration.app.ui.dynamic.DynamicComponentFactory;
 
-public class DocumentController extends AppCompatActivity {
+public class DocumentController extends Fragment {
 
     ViewGroup leftPanel = null;
+    View theView =null;
 
+    public DocumentController()
+    {
+        super(R.layout.activity_document_controller);
+    }
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_document_controller);
-        getSupportActionBar().hide();
-        leftPanel = findViewById(R.id.pnlLeftPanel);
+    }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        theView= inflater.inflate(R.layout.activity_document_controller, container, false);
+        leftPanel = theView.findViewById(R.id.pnlLeftPanel);
         loadUI();
+        setEventListener();
+        return theView;
+    }
+
+    private void setEventListener(){
+        theView.findViewById(R.id.btnScanDocument).setOnClickListener(v -> openCamera(v));
+        theView.findViewById(R.id.btnAttachDocument).setOnClickListener(v -> openGallery(v));
 
     }
 
+
+
+    public Context getApplicationContext(){return theView.getContext();}
 
     public String loadJSONFromResource(int resourceID) {
         String json = null;
@@ -91,7 +112,6 @@ public class DocumentController extends AppCompatActivity {
                         component = factory.getDropdownComponent(fieldName,field.getJSONObject("label"), null);
                         if(component!=null) {
                             leftPanel.addView((View) component.getView(2));
-
                         }
 
                     }
@@ -99,13 +119,6 @@ public class DocumentController extends AppCompatActivity {
 
 
             }
-
-
-
-
-
-
-
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -115,7 +128,7 @@ public class DocumentController extends AppCompatActivity {
     public void openCamera(View v){
         int REQUEST_CODE = 99;
         int preference = ScanConstants.OPEN_CAMERA;
-        Intent intent = new Intent(this, ScanActivity.class);
+        Intent intent = new Intent(this.getApplicationContext(), ScanActivity.class);
         intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
         startActivityForResult(intent, REQUEST_CODE);
     }
@@ -123,22 +136,22 @@ public class DocumentController extends AppCompatActivity {
     public void  openGallery(View v){
         int REQUEST_CODE = 99;
         int preference = ScanConstants.OPEN_MEDIA;
-        Intent intent = new Intent(this, ScanActivity.class);
+        Intent intent = new Intent(this.getApplicationContext(), ScanActivity.class);
         intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 99 && resultCode == Activity.RESULT_OK) {
             Uri uri = data.getExtras().getParcelable(ScanConstants.SCANNED_RESULT);
             Bitmap bitmap = null;
             try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                bitmap = MediaStore.Images.Media.getBitmap(this.getApplicationContext().getContentResolver(), uri);
                 System.out.println(uri);
-                getContentResolver().delete(uri, null, null);
+                this.getApplicationContext().getContentResolver().delete(uri, null, null);
               //scannedImageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();

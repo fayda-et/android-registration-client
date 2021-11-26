@@ -394,22 +394,22 @@
                 >
                 <Button
                     android:id="@+id/btnPreviousModality"
-                    android:layout_width="68dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
 
                     android:layout_marginHorizontal="8dp"
                     app:cornerRadius="45dp"
-
+                    style="?attr/materialButtonOutlinedStyle"
                     android:text="@string/previous" />
 
                 <Button
                     android:id="@+id/btnNextModality"
-                    android:layout_width="68dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:cornerRadius="45dp"
-
+                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_marginHorizontal="8dp"
                     android:text="@string/next" />
             </LinearLayout>

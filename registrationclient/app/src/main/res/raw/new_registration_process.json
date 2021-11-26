@@ -158,14 +158,14 @@
             "order": 2,
             "name": "DemographicDetails",
             "label": {
+                "eng": "Demographic Details",
                 "ara": "التفاصيل الديموغرافية",
-                "fra": "Détails démographiques",
-                "eng": "Demographic Details"
+                "fra": "Détails démographiques"
             },
             "caption": {
+                "eng": "Demographic Details",
                 "ara": "التفاصيل الديموغرافية",
-                "fra": "Détails démographiques",
-                "eng": "Demographic Details"
+                "fra": "Détails démographiques"
             },
             "fields": [
                 {
@@ -176,9 +176,10 @@
                     "maximum": 0,
                     "description": "Full Name",
                     "label": {
+                        "eng": "Full Name",
                         "ara": "الاسم الكامل",
-                        "fra": "Nom complet",
-                        "eng": "Full Name"
+                        "fra": "Nom complet"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -216,9 +217,9 @@
                     "maximum": 0,
                     "description": "dateOfBirth",
                     "label": {
+                        "eng": "DOB",
                         "ara": "الاسم الكامل",
-                        "fra": "DOB",
-                        "eng": "DOB"
+                        "fra": "DOB"
                     },
                     "controlType": "ageDate",
                     "fieldType": "default",
@@ -256,9 +257,10 @@
                     "maximum": 0,
                     "description": "gender",
                     "label": {
+                        "eng": "Gender",
                         "ara": "جنس",
-                        "fra": "Le genre",
-                        "eng": "Gender"
+                        "fra": "Le genre"
+
                     },
                     "controlType": "button",
                     "fieldType": "dynamic",
@@ -289,9 +291,10 @@
                     "maximum": 0,
                     "description": "addressLine1",
                     "label": {
+                        "eng": "line1",
                         "ara": "الاسم الكامل",
-                        "fra": "line1",
-                        "eng": "line1"
+                        "fra": "line1"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -329,9 +332,10 @@
                     "maximum": 0,
                     "description": "addressLine2",
                     "label": {
+                        "eng": "line2",
                         "ara": "الاسم الكامل",
-                        "fra": "line2",
-                        "eng": "line2"
+                        "fra": "line2"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -369,9 +373,10 @@
                     "maximum": 0,
                     "description": "addressLine3",
                     "label": {
+                        "eng": "line3",
                         "ara": "الاسم الكامل",
-                        "fra": "line3",
-                        "eng": "line3"
+                        "fra": "line3"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -409,9 +414,10 @@
                     "maximum": 0,
                     "description": "residenceStatus",
                     "label": {
+                        "eng": "Residence Status",
                         "ara": "الاسم الكامل",
-                        "fra": "Reside Status",
-                        "eng": "Residence Status"
+                        "fra": "Reside Status"
+
                     },
                     "controlType": "button",
                     "fieldType": "dynamic",
@@ -442,9 +448,10 @@
                     "maximum": 0,
                     "description": "referenceIdentityNumber",
                     "label": {
+                        "eng": "Reference Identity Number",
                         "ara": "الاسم الكامل",
-                        "fra": "Reference Identity Number",
-                        "eng": "Reference Identity Number"
+                        "fra": "Reference Identity Number"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -482,9 +489,10 @@
                     "maximum": 0,
                     "description": "region",
                     "label": {
+                        "eng": "Region",
                         "ara": "الاسم الكامل",
-                        "fra": "Region",
-                        "eng": "Region"
+                        "fra": "Region"
+
                     },
                     "controlType": "dropdown",
                     "fieldType": "default",
@@ -522,9 +530,10 @@
                     "maximum": 0,
                     "description": "province",
                     "label": {
+                        "eng": "Province",
                         "ara": "الاسم الكامل",
-                        "fra": "Province",
-                        "eng": "Province"
+                        "fra": "Province"
+
                     },
                     "controlType": "dropdown",
                     "fieldType": "default",
@@ -562,9 +571,10 @@
                     "maximum": 0,
                     "description": "city",
                     "label": {
+                        "eng": "City",
                         "ara": "الاسم الكامل",
-                        "fra": "City",
-                        "eng": "City"
+                        "fra": "City"
+
                     },
                     "controlType": "dropdown",
                     "fieldType": "default",
@@ -602,9 +612,9 @@
                     "maximum": 0,
                     "description": "zone",
                     "label": {
+                        "eng": "Zone",
                         "ara": "الاسم الكامل",
-                        "fra": "Zone",
-                        "eng": "Zone"
+                        "fra": "Zone"
                     },
                     "controlType": "dropdown",
                     "fieldType": "default",
@@ -635,9 +645,10 @@
                     "maximum": 0,
                     "description": "postalCode",
                     "label": {
+                        "eng": "Postal",
                         "ara": "الاسم الكامل",
-                        "fra": "Postal",
-                        "eng": "Postal"
+                        "fra": "Postal"
+
                     },
                     "controlType": "dropdown",
                     "fieldType": "default",
@@ -675,9 +686,10 @@
                     "maximum": 0,
                     "description": "phone",
                     "label": {
+                        "eng": "Phone",
                         "ara": "الاسم الكامل",
-                        "fra": "Phone",
-                        "eng": "Phone"
+                        "fra": "Phone"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -715,9 +727,10 @@
                     "maximum": 0,
                     "description": "email",
                     "label": {
+                        "eng": "Email",
                         "ara": "الاسم الكامل",
-                        "fra": "Email",
-                        "eng": "Email"
+                        "fra": "Email"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -755,9 +768,9 @@
                     "maximum": 0,
                     "description": "introducerName",
                     "label": {
+                        "eng": "Introducer Name",
                         "ara": "اسم المُعرّف",
-                        "fra": "nom del'introducteur",
-                        "eng": "Introducer Name"
+                        "fra": "nom del'introducteur"
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -796,9 +809,10 @@
                     "maximum": 0,
                     "description": "introducerRID",
                     "label": {
+                        "eng": "Introducer RID",
                         "ara": "مقدم RID",
-                        "fra": "Introducteur RID",
-                        "eng": "Introducer RID"
+                        "fra": "Introducteur RID"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
@@ -844,9 +858,10 @@
                     "maximum": 0,
                     "description": "introducerUIN",
                     "label": {
+                        "eng": "Introducer UIN",
                         "ara": "مقدم في",
-                        "fra": "Introducteur UIN",
-                        "eng": "Introducer UIN"
+                        "fra": "Introducteur UIN"
+
                     },
                     "controlType": "textbox",
                     "fieldType": "default",
