@@ -16,14 +16,11 @@
         android:id="@+id/scrollView2"
         android:layout_width="350dp"
         android:layout_height="0dp"
-
         android:background="@color/backgroundColor"
-
         app:layout_constraintEnd_toStartOf="@+id/divider2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
-
 
         <LinearLayout
             android:id="@+id/pnlLeftPanel"
@@ -34,9 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-
-
         </LinearLayout>
     </ScrollView>
 
